@@ -7,6 +7,8 @@ const nextConfig = {
       unoptimized: true,
     },
   },
+
+  target: 'serverless'
 }
 
 module.exports = nextConfig
