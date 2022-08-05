@@ -4,7 +4,7 @@ title: tset
 subtitle: test
 category: tech
 date: 2022-08-05T13:02:23.221Z
-author: me
+author: David
 tags:
   - name: new
 ---
