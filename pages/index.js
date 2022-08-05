@@ -1,8 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import fetch from "isomorphic-unfetch"
+import {useEffect} from "react";
+import getPosts from "./api/getPosts";
 
-export default function Home() {
+export default function Home({posts}) {
+
+    console.log(posts)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -66,4 +72,12 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const posts = await getPosts()
+
+  return {
+    props: {posts}
+  }
 }
