@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node helpers/getParsedData.js && next dev",
-    "build": "next build",
+    "build": "node helpers/getParsedData.js && next build",
     "export": "node helpers/getParsedData.js && npm run build && next export",
     "start": "next start",
     "lint": "next lint"
