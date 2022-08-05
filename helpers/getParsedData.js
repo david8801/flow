@@ -29,7 +29,7 @@ const postFileContents = `${allPosts}`;
 try {
     fs.readdirSync("./public/parsed");
 } catch (e) {
-    fs.mkdirSync("../public/parsed");
+    fs.mkdirSync("./public/parsed");
 }
 
 // Create our cached posts JSON
