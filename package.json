@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "npm run build && next export",
+    "export": "helpers/getParsedData.js && npm run build && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
