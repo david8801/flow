@@ -4,7 +4,7 @@ const matter = require("gray-matter");
 
 const getAll = dir => {
     // Read files at _posts/{directory}
-    const directory = path.join(process.cwd(), `../content/${dir}`);
+    const directory = path.join(process.cwd(), `./content/${dir}`);
     const fileNames = fs.readdirSync(directory);
     // Get the content of the files as JSON
     const content = fileNames.map(fileName => {
@@ -27,13 +27,13 @@ const postFileContents = `${allPosts}`;
 
 // Create the cache folder if it doesn't exist
 try {
-    fs.readdirSync("../public/parsed");
+    fs.readdirSync("./public/parsed");
 } catch (e) {
     fs.mkdirSync("../public/parsed");
 }
 
 // Create our cached posts JSON
-fs.writeFile("../public/parsed/posts.json", postFileContents, err => {
+fs.writeFile("./public/parsed/posts.json", postFileContents, err => {
     if (err) return console.log(err);
     console.log("Posts cached.");
 });
