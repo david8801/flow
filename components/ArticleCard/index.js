@@ -7,7 +7,7 @@ const ArticleCard = ({ data, showSubtitle }) => {
   return (
     <div
       {...(sponsored && { style: {backgroundColor: category_color}})}
-      className={`${styles.articleCard} ${sponsored ? "sponsored" : ""}`}
+      className={`${styles.articleCard} ${sponsored ? styles.sponsored : ""}`}
     >
       <img src={image} alt=""/>
       <div className={styles.articleCardContent}>

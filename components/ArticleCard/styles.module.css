@@ -11,6 +11,7 @@
 .articleCardContent {
   display: flex;
   flex-direction: column;
+  height: max-content;
 }
 
 .articleCard.sponsored .articleCardContent {
