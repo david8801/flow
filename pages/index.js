@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import getPosts from "./api/getPosts";
 import styles from "../styles/homepage.module.css"
+import getCategories from "./api/getCategories";
 
-export default function Home({ posts }) {
+export default function Home({ posts, categories }) {
   const mainPost = posts[0];
   const additionalPosts = posts.slice(1, 5)
 
@@ -30,8 +31,11 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = await getPosts()
+  const categories = await getCategories()
+
+  posts.map(i => ({...i, data: {...i.data, category_color: categories.find(j => i.data.category === j.name)?.color}}))
 
   return {
-    props: { posts }
+    props: { posts, categories }
   }
 }

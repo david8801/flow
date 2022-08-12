@@ -22,8 +22,10 @@ const getAll = dir => {
 };
 
 const allPosts = getAll("blog");
+const allCategories = getAll("categories");
 
 const postFileContents = `${allPosts}`;
+const categoriesFileContents = `${allCategories}`;
 
 // Create the cache folder if it doesn't exist
 try {
@@ -36,4 +38,9 @@ try {
 fs.writeFile("./public/parsed/posts.json", postFileContents, err => {
     if (err) return console.log(err);
     console.log("Posts cached.");
+});
+
+fs.writeFile("./public/parsed/categories.json", categoriesFileContents, err => {
+    if (err) return console.log(err);
+    console.log("Categories cached.");
 });
