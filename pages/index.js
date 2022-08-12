@@ -31,11 +31,11 @@ export default function Home({ posts, categories }) {
 
 export async function getStaticProps() {
   const posts = await getPosts()
-  const categories = await getCategories()
+  // const categories = await getCategories()
 
-  posts.map(i => ({...i, data: {...i.data, category_color: categories.find(j => i.data.category === j.name)?.color}}))
+  // posts.map(i => ({...i, data: {...i.data, category_color: categories.find(j => i.data.category === j.name)?.color}}))
 
   return {
-    props: { posts, categories }
+    props: { posts, categories: [] }
   }
 }
