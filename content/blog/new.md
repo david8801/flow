@@ -7,6 +7,7 @@ subtitle: There’s nothing like an explosion of blockchain news to leave you
   Cat being sold as one.
 category: blockchain
 date: 2022-08-05T13:09:31.090Z
+sponsored: true
 author: David
 ---
 ads fasdf adsfasdfasd fads fasd
