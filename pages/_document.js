@@ -17,59 +17,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-Black.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-Bold.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-Extra-Bold.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-Light.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-Thin.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-Regular.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/SpartanMB/SpartanMB-SemiBold.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin="anonymous"
-          />
+          {/*<link href="/fonts/SpartanMB/style.css" rel="stylesheet"/>*/}
         </Head>
         <body>
-        <Main />
-        <NextScript />
+        <Main/>
+        <NextScript/>
         </body>
       </Html>
     );

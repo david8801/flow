@@ -1,46 +1,46 @@
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-Black.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-Black.otf');
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-Bold.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-Bold.otf');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-Extra-Bold.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-Extra-Bold.otf');
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-Light.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-Light.otf');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-Regular.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-Regular.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-Thin.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-Thin.otf');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Spartan MB';
-  src: url('../public/fonts/SpartanMB/SpartanMB-SemiBold.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-SemiBold.otf');
   font-weight: 600;
   font-style: normal;
 }
@@ -73,7 +73,6 @@ button {
 
 span, button, h1, h2, h3, h4, h5 {
   font-family: 'Spartan MB';
-
 }
 
 .menu-left .page-content {
@@ -95,7 +94,7 @@ span, button, h1, h2, h3, h4, h5 {
   background: #B987F2;
   color: white;
   z-index: 100;
-  font-family: 'Spartan MB';
+  font-family: "Spartan MB";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -110,4 +109,28 @@ span, button, h1, h2, h3, h4, h5 {
 
 .running-text-shown .categories-wrapper {
   top: 45px;
+}
+
+.theme-text {
+  transition: .3s color;
+}
+
+.light-theme .theme-text {
+  color: black;
+}
+
+.dark-theme .theme-text {
+  color: white
+}
+
+.theme-bg {
+  transition: .3s background-color;
+}
+
+.light-theme .theme-bg {
+  background-color: white
+}
+
+.dark-theme .theme-bg {
+  background-color: black;
 }

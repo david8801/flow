@@ -6,6 +6,7 @@ import {categories} from "../../constants/header";
 import Link from "next/link";
 import {setTheme} from "../../store/main/mainSlice";
 import Input from "../ui/Input";
+import SearchWrapper from "../SearchWrapper";
 
 const HeaderContent = ({
                          sideNavigation,
@@ -16,12 +17,10 @@ const HeaderContent = ({
                          setSearch,
                          searchResults,
                          setSearchResults,
-                         submitSearch
+                         submitSearch,
+                         searchActive,
+                         setSearchActive
                        }) => {
-  const searchActive = typeof search === "string"
-  const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
 
   return (
     <>
@@ -59,16 +58,13 @@ const HeaderContent = ({
           {categories.map(i => (
             <span style={{ color: i.color }}>{i.name}</span>
           ))}
-          <div className={styles.searchWrapper}>
-            <form className={`${styles.searchForm} ${searchActive ? styles.searchFormActive : ""}`}
-                  onSubmit={submitSearch}>
-              <Input StartIcon={<SearchIcon/>} value={search} onChange={handleSearch} type="text"/>
-            </form>
-            <span className={`${styles.searchHandler} ${searchActive ? styles.searchHandlerInactive : ""}`}
-                  onClick={() => setSearch("")}>
-            <SearchIcon/>search
-          </span>
-          </div>
+          <SearchWrapper
+            onChange={setSearch}
+            submitSearch={submitSearch}
+            value={search}
+            active={searchActive}
+            setActive={setSearchActive}
+          />
         </div>
       </div>
     </>

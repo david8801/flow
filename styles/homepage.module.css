@@ -1,0 +1,23 @@
+.homepage {
+  padding: 0 64px;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 24px;
+}
+
+.mainArticle {
+
+}
+
+.mainArticle > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.articleList {
+
+}

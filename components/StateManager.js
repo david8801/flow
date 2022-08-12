@@ -37,7 +37,7 @@ const StateManager = ({ children }) => {
         </div>
       )}
       <Header/>
-      <div className={"page-content"}>
+      <div className={"page-content theme-bg"}>
         {children}
       </div>
     </div>

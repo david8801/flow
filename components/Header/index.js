@@ -6,7 +6,8 @@ import HeaderContent from "../HeaderContent";
 import SidebarContent from "../SidebarContent";
 
 const Header = () => {
-  const [search, setSearch] = useState(null);
+  const [searchValue, setSearchValue] = useState("");
+  const [searchActive, setSearchActive] = useState(false);
   const [searchResults, setSearchResults] = useState([])
   const sideNavigation = useSelector(getSideNavigationSelector);
   const theme = useSelector(getThemeSelector)
@@ -23,7 +24,7 @@ const Header = () => {
   const submitSearch = (e) => {
     e.preventDefault()
 
-    setSearch(null)
+    setSearchActive(false)
   }
 
   return sideNavigation
@@ -33,11 +34,13 @@ const Header = () => {
         theme={theme}
         toggleDarkMode={toggleDarkMode}
         toggleSideNavigation={toggleSideNavigation}
-        search={search}
-        setSearch={setSearch}
+        search={searchValue}
+        setSearch={setSearchValue}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         submitSearch={submitSearch}
+        searchActive={searchActive}
+        setSearchActive={setSearchActive}
       />
     )
     : (
@@ -46,11 +49,13 @@ const Header = () => {
         theme={theme}
         toggleDarkMode={toggleDarkMode}
         toggleSideNavigation={toggleSideNavigation}
-        search={search}
-        setSearch={setSearch}
+        search={searchValue}
+        setSearch={setSearchValue}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         submitSearch={submitSearch}
+        searchActive={searchActive}
+        setSearchActive={setSearchActive}
       />
     );
 };

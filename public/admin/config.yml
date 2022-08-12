@@ -35,6 +35,16 @@ collections:
             searchFields: [ "name" ]
             valueField: "name"
 
+  - name: "categories"
+    label: "Categories"
+    label_singular: "Category"
+    folder: "content/categories"
+    create: true
+    identifier_field: "name"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Color", name: "color", widget: "color"}
+
   - name: "tags"
     label: "Tags"
     label_singular: "Tag"

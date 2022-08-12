@@ -5,14 +5,36 @@ import {Logo, SearchIcon} from "../../icons/header";
 import {categories} from "../../constants/header";
 import Switch from "../ui/Switch";
 import Link from "next/link";
+import SearchWrapper from "../SearchWrapper";
 
-const SidebarContent = ({ theme, toggleSideNavigation, sideNavigation, toggleDarkMode }) => {
+const SidebarContent = ({
+                          theme,
+                          toggleSideNavigation,
+                          sideNavigation,
+                          toggleDarkMode,
+                          search,
+                          setSearch,
+                          searchResults,
+                          setSearchResults,
+                          submitSearch,
+  searchActive,
+  setSearchActive
+                        }) => {
   return (
     <div className={`${headerStyles.header} ${styles.sidebar}`}>
       <Link href={"/"}>
         <Logo width={134}/>
       </Link>
-      <span className={styles.search}><SearchIcon/>search</span>
+      <div className={styles.search}>
+        <SearchWrapper
+          submitSearch={submitSearch}
+          active={searchActive}
+          setActive={setSearchActive}
+          onChange={setSearch}
+          value={search}
+          sidebar
+        />
+      </div>
       <div className={styles.categories}>
         {categories.map(i => (
           <span style={{ color: i.color }}>{i.name}</span>
