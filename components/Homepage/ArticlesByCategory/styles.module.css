@@ -1,0 +1,25 @@
+.articlesByCategoryWrapper > * + * {
+  margin-top: 48px;
+}
+
+.dividedSection {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.dividedSectionArticles {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 48px 24px;
+}
+
+.dividedSectionHead {
+  display: flex;
+  align-items: center;
+}
+
+.dividedSectionHead > span {
+  cursor: pointer;
+}

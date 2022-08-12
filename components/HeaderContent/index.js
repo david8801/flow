@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from "./styles.module.css";
-import {Discord, Instagram, Logo, SearchIcon, Telegram, Twitter} from "../../icons/header";
+import {Discord, Instagram, Logo, Telegram, Twitter} from "../../icons/header";
 import Switch from "../ui/Switch";
-import {categories} from "../../constants/header";
 import Link from "next/link";
-import {setTheme} from "../../store/main/mainSlice";
-import Input from "../ui/Input";
 import SearchWrapper from "../SearchWrapper";
 
 const HeaderContent = ({
@@ -19,9 +16,10 @@ const HeaderContent = ({
                          setSearchResults,
                          submitSearch,
                          searchActive,
-                         setSearchActive
+                         setSearchActive,
+                         categories
                        }) => {
-
+  console.log(categories)
   return (
     <>
       <div className={styles.header}>
@@ -54,9 +52,9 @@ const HeaderContent = ({
         </div>
       </div>
       <div className={`${styles.categoriesWrapper} categories-wrapper`}>
-        <div className={styles.categories}>
-          {categories.map(i => (
-            <span style={{ color: i.color }}>{i.name}</span>
+        <div id={"categories"} className={styles.categories}>
+          {categories.map(({ data }, idx) => (
+            <span key={idx} style={{ color: data.color }}>{data.name}</span>
           ))}
           <SearchWrapper
             onChange={setSearch}

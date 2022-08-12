@@ -2,7 +2,6 @@ import React from 'react';
 import headerStyles from "../HeaderContent/styles.module.css"
 import styles from "./styles.module.css"
 import {Logo, SearchIcon} from "../../icons/header";
-import {categories} from "../../constants/header";
 import Switch from "../ui/Switch";
 import Link from "next/link";
 import SearchWrapper from "../SearchWrapper";
@@ -17,8 +16,9 @@ const SidebarContent = ({
                           searchResults,
                           setSearchResults,
                           submitSearch,
-  searchActive,
-  setSearchActive
+                          searchActive,
+                          setSearchActive,
+                          categories
                         }) => {
   return (
     <div className={`${headerStyles.header} ${styles.sidebar}`}>
@@ -35,9 +35,10 @@ const SidebarContent = ({
           sidebar
         />
       </div>
+
       <div className={styles.categories}>
-        {categories.map(i => (
-          <span style={{ color: i.color }}>{i.name}</span>
+        {categories.map(({ data }, idx) => (
+          <span key={idx} style={{ color: data.color }}>{data.name}</span>
         ))}
       </div>
       <div className={styles.switches}>

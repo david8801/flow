@@ -1,0 +1,63 @@
+.articleCard {
+  transition: .3s background-color;
+  cursor: pointer;
+}
+
+.articleCard:hover .articleCardContent{
+  opacity: .7;
+}
+
+.articleCard,
+.articleCardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.articleCard.sponsored .articleCardContent {
+  padding: 16px;
+}
+
+.articleCard > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.articleCardContent {
+  margin-top: 16px;
+  transition: .3s opacity;
+}
+
+.articleRowTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  transition: .3s color;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+  white-space: pre-wrap;
+  margin-top: 8px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  margin-top: 16px;
+}

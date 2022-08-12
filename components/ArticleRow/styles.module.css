@@ -2,6 +2,19 @@
   display: flex;
   flex-direction: column;
   padding: 16px 36px;
+  cursor: pointer;
+}
+
+.articleRow:hover .title {
+  opacity: .7;
+}
+
+.articleRow:not(.big):hover .category {
+  opacity: .7;
+}
+
+.articleRow.small {
+  padding: 0;
 }
 
 .articleRow > div,
@@ -18,6 +31,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+  transition: .3s opacity;
 }
 
 .date {
@@ -32,6 +46,7 @@
   line-height: 24px;
   position: relative;
   white-space: pre-wrap;
+  transition: .3s opacity;
 }
 
 .title span {

@@ -4,8 +4,10 @@ import {getSideNavigationSelector, getThemeSelector} from "../../store/main/sele
 import {setSideNavigation, setTheme} from "../../store/main/mainSlice";
 import HeaderContent from "../HeaderContent";
 import SidebarContent from "../SidebarContent";
+import getPosts from "../../pages/api/getPosts";
+import getCategories from "../../pages/api/getCategories";
 
-const Header = () => {
+const Header = ({ categories }) => {
   const [searchValue, setSearchValue] = useState("");
   const [searchActive, setSearchActive] = useState(false);
   const [searchResults, setSearchResults] = useState([])
@@ -41,6 +43,7 @@ const Header = () => {
         submitSearch={submitSearch}
         searchActive={searchActive}
         setSearchActive={setSearchActive}
+        categories={categories}
       />
     )
     : (
@@ -56,6 +59,7 @@ const Header = () => {
         submitSearch={submitSearch}
         searchActive={searchActive}
         setSearchActive={setSearchActive}
+        categories={categories}
       />
     );
 };

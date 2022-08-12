@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import Input from "../ui/Input";
 import {SearchIcon} from "../../icons/header";
 
-const SearchWrapper = ({submitSearch, active, setActive, onChange, value, sidebar}) => {
+const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sidebar }) => {
   const handleSearch = (e) => {
     onChange(e.target.value)
   }
@@ -11,8 +11,13 @@ const SearchWrapper = ({submitSearch, active, setActive, onChange, value, sideba
   useEffect(() => {
     if (active) {
       document.getElementById("search-input").focus()
+      if (!sidebar) {
+        setTimeout(() => {
+          document.getElementById("categories").scrollLeft = 10000
+        }, 600)
+      }
     }
-  }, [active])
+  }, [active, sidebar])
 
   return (
     <div className={`${styles.searchWrapper} ${sidebar ? styles.sidebarSearch : ""}`}>
@@ -20,10 +25,12 @@ const SearchWrapper = ({submitSearch, active, setActive, onChange, value, sideba
             onSubmit={submitSearch}>
         <Input id={"search-input"} StartIcon={<SearchIcon/>} value={value} onChange={handleSearch} type="text"/>
       </form>
-      <span className={`${styles.searchHandler} ${active ? styles.searchHandlerInactive : ""}`}
-            onClick={() => setActive(true)}>
+      <span
+        className={`${styles.searchHandler} ${active ? styles.searchHandlerInactive : ""}`}
+        onClick={() => setActive(true)}
+      >
             <SearchIcon/>search
-          </span>
+      </span>
     </div>
   );
 };

@@ -1,0 +1,12 @@
+.latestWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.latestWrapper > span {
+  margin-bottom: 16px;
+}
+
+.latestWrapper > div + div {
+  margin-top: 32px;
+}

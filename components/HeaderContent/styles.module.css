@@ -42,14 +42,20 @@
 .categoriesWrapper {
   padding: 36px 80px;
   position: sticky;
+  z-index: 100;
   top: 0;
   background-color: black;
 }
 
+.categoriesOverflow {
+  overflow: hidden;
+}
 .categories {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .categories span {
@@ -58,6 +64,10 @@
   line-height: 30px;
   letter-spacing: 2px;
   cursor: pointer;
+}
+
+.categories > * + * {
+  margin-left: 32px;
 }
 
 .categories svg {
