@@ -1,0 +1,88 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+  z-index: 2;
+}
+
+.track {
+  width: 19px;
+  height: 10px;
+  border: 1px solid #B987F2;
+  border-radius: 50px;
+  z-index: -1;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #B987F2;
+  border-radius: 50%;
+  z-index: 1;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.medium .track {
+  width: 38px;
+  height: 22px;
+}
+
+.medium .thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.input:checked ~ .track {
+  background-color: #B987F2;
+}
+
+.input:checked ~ .thumb {
+  background-color: white;
+  transform: translateY(-50%) translateX(9px);
+}
+
+.medium .input:checked ~ .thumb {
+  transform: translateY(-50%) translateX(16px);
+}
+
+.label {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
+}

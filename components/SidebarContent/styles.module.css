@@ -1,0 +1,59 @@
+.sidebar {
+  width: 168px;
+  height: 100vh;
+  position: fixed;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.search {
+  padding: 16px 0;
+  border-bottom: 0.5px solid rgba(186, 186, 186, 0.3);
+  border-top: 0.5px solid rgba(186, 186, 186, 0.3);
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  color: #B987F2;
+  cursor: pointer;
+}
+
+.search svg {
+  margin-right: 8px;
+}
+
+.categories {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categories span {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.categories > * + * {
+  margin-top: 16px;
+}
+
+.subscribe {
+  padding: 24px 0;
+  width: calc(100% + 32px);
+  background: #B987F2;
+  display: block;
+  color: white;
+  margin: auto -16px -24px;
+}
+
+.switches {
+  margin-top: 84px;
+}
+
+.switches > * + * {
+  margin-top: 16px;
+}
