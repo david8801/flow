@@ -1,6 +1,6 @@
 ---
 image: img/2-1-.jpg
-title: new
+title: a billion-dollar NFT gaming startup promised riches and delivered disaster
 subtitle: There’s nothing like an explosion of blockchain news to leave you
   thinking, “Um… what’s going on here?”  That’s the feeling I’ve experienced
   while reading about Grimes getting millions of dollars for NFTs or about Nyan
