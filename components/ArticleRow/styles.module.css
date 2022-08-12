@@ -1,0 +1,80 @@
+.articleRow {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 36px;
+}
+
+.articleRow > div,
+.articleRow > span {
+  margin-top: 8px;
+}
+
+.articleRowTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+  white-space: pre-wrap;
+}
+
+.title span {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.title span:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.articleRow.big {
+  color: white
+}
+
+.articleRow.big > div,
+.articleRow.big > span {
+  margin-top: 16px;
+}
+
+.articleRow.big .category {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.articleRow.big .title {
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.articleRow.big .subtitle {
+  opacity: 0.8;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}

@@ -2,10 +2,12 @@ import Head from 'next/head'
 import getPosts from "./api/getPosts";
 import styles from "../styles/homepage.module.css"
 import getCategories from "./api/getCategories";
+import ArticleRow from "../components/ArticleRow";
 
 export default function Home({ posts, categories }) {
   const mainPost = posts[0];
   const additionalPosts = posts.slice(1, 5)
+  console.log("categories", categories)
 
   console.log(mainPost)
   return (
@@ -18,10 +20,13 @@ export default function Home({ posts, categories }) {
       <div className={styles.head}>
         <div className={styles.mainArticle}>
           <img src={mainPost.data.image} alt=""/>
+          <div className={styles.mainArticleContent}>
+            <ArticleRow size={"big"} data={mainPost.data} showSubtitle/>
+          </div>
         </div>
-        <div className={styles}>
+        <div className={styles.articleList}>
           {additionalPosts.map(i => (
-            <div></div>
+            <ArticleRow data={i.data}/>
           ))}
         </div>
       </div>
@@ -30,12 +35,12 @@ export default function Home({ posts, categories }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getPosts()
-  // const categories = await getCategories()
+  let posts = await getPosts()
+  const categories = await getCategories()
 
-  // posts.map(i => ({...i, data: {...i.data, category_color: categories.find(j => i.data.category === j.name)?.color}}))
+  posts = posts.map(i => ({...i, data: {...i.data, category_color: categories.find(j => i.data.category === j.slug).data.color || null}}))
 
   return {
-    props: { posts, categories: [] }
+    props: { posts, categories }
   }
 }

@@ -9,7 +9,14 @@
 }
 
 .mainArticle {
+  display: flex;
+  flex-direction: column;
+}
 
+.mainArticleContent {
+  padding: 16px 32px;
+  margin: 0 32px;
+  transform: translateY(-50%);
 }
 
 .mainArticle > img {
@@ -19,5 +26,10 @@
 }
 
 .articleList {
+  border: 1px solid rgba(186, 186, 186, 0.3);
+  height: max-content;
+}
 
+.articleList > div + div {
+  border-top: 1px solid rgba(186, 186, 186, 0.3);
 }

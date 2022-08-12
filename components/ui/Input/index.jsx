@@ -5,23 +5,23 @@ import InputError from '../InputError/index';
 import InputLabel from '../InputLabel/index';
 import classes from './styles.module.css';
 
-const Index = forwardRef(({
-                            label,
-                            margin,
-                            component,
-                            inputClassName,
-                            fullWidth,
-                            name,
-                            error,
-                            StartIcon,
-                            EndIcon,
-                            type = 'text',
-                            placeholder,
-                            className,
-                            onChange,
-                            onClick,
-                            ...props
-                          }) => {
+const Index = ({
+                 label,
+                 margin,
+                 component,
+                 inputClassName,
+                 fullWidth,
+                 name,
+                 error,
+                 StartIcon,
+                 EndIcon,
+                 type = 'text',
+                 placeholder,
+                 className,
+                 onChange,
+                 onClick,
+                 ...props
+               }) => {
   const Component = component || 'input';
   const classNames = clsx(
     classes.wrap,
@@ -62,7 +62,7 @@ const Index = forwardRef(({
       }
     </>
   );
-});
+};
 
 Index.propTypes = {
   name: PropTypes.string,

@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Spartan MB';
-  src: url('/fonts/SpartanMB/SpartanMB-Extra-Bold.otf');
+  src: url('/fonts/SpartanMB/SpartanMB-ExtraBold.otf');
   font-weight: 800;
   font-style: normal;
 }
@@ -79,9 +79,16 @@ span, button, h1, h2, h3, h4, h5 {
   padding-left: 168px;
 }
 
-.menu-left.running-text-shown .page-content,
+.menu-left.running-text-shown .page-content {
+  padding-top: 92px;
+}
+
 .menu-top.running-text-shown {
   padding-top: 45px;
+}
+
+.menu-top .page-content {
+  padding-top: 40px;
 }
 
 .running-text-wrapper {
@@ -119,6 +126,16 @@ span, button, h1, h2, h3, h4, h5 {
   color: black;
 }
 
+.light-theme .theme-darkgrey-text {
+  color: rgba(93, 94, 94, 1);
+}
+
+.light-theme .theme-grey-text {
+  color: rgba(186, 186, 186, 1)
+}
+
+.light-theme .theme-darkgrey-text,
+.dark-theme .theme-grey-text,
 .dark-theme .theme-text {
   color: white
 }
