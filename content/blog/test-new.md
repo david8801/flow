@@ -1,5 +1,5 @@
 ---
-image: img/image_2022-07-29_17-50-26.png
+image: img/2-1-.jpg
 title: test new
 subtitle: asd
 category: design
