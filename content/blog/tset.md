@@ -1,5 +1,5 @@
 ---
-image: img/image_2022-07-29_17-50-26.png
+image: img/5.jpg
 title: tset
 subtitle: test
 category: tech
