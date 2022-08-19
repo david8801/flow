@@ -45,6 +45,7 @@ collections:
     fields:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Color", name: "color", widget: "color"}
+      - {label: "Order", name: "order", widget: "number"}
 
   - name: "tags"
     label: "Tags"
