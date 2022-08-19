@@ -46,12 +46,14 @@
 }
 
 .state-manager:not(.light-theme) {
+  --main-bg-color: black;
   --main-text-color: white;
   --gray-text-color: white;
   --dark-gray-text-color: white
 }
 
 .state-manager.light-theme {
+  --main-bg-color: white;
   --main-text-color: black;
   --gray-text-color: rgba(186, 186, 186, 1);;
   --dark-gray-text-color: rgba(93, 94, 94, 1);;
@@ -89,6 +91,10 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+input {
+  outline: none;
 }
 
 span, button, h1, h2, h3, h4, h5 {

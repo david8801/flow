@@ -35,10 +35,12 @@ export async function getStaticProps() {
   let posts = await getPosts()
   const categories = await getCategories()
 
-  posts = posts.map(i => ({
+  posts = posts.map(i => {
+    const category = categories.find(j => i.data.category === j.slug)
+    return {
     ...i,
-    data: { ...i.data, category_color: categories.find(j => i.data.category === j.slug).data.color || null }
-  }))
+    data: { ...i.data, category_color: category?.data.color, category_order: category?.data.order }
+  }})
 
   return {
     props: { posts, categories }

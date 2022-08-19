@@ -53,9 +53,15 @@ const HeaderContent = ({
       </div>
       <div className={`${styles.categoriesWrapper} categories-wrapper`}>
         <div id={"categories"} className={styles.categories}>
-          <span style={{ color: "#B987F2" }}>home</span>
+          <Link href={"/"}>
+            <span style={{ color: "#B987F2" }}>home</span>
+          </Link>
           {categories.map(({ data }, idx) => (
-            <span key={idx} style={{ color: data.color }}>{data.name}</span>
+            <Link href={"/category/" + data.name.split(" ").join("-")}>
+              <span key={idx} style={{ color: data.color }}>
+                {data.name}
+              </span>
+            </Link>
           ))}
           <SearchWrapper
             onChange={setSearch}

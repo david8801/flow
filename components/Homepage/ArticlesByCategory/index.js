@@ -1,8 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import styles from "./styles.module.css";
 import ArticleCard from "../../ArticleCard";
+import {ArrowRightIcon} from "../../../icons/shared";
 
 const ArticlesByCategory = ({ posts, categories }) => {
+  const orderByCategory = useMemo(() => {
+    return categories.reduce((acc, val) => {
+      console.log("val", val)
+      acc[val.slug] = val.data.order
+
+      if (!acc.tranding) {
+        acc.tranding = -100
+      }
+
+      return acc
+    }, {})
+  }, [categories])
   const [articlesDivided, setArticlesDivided] = useState({});
 
   console.log(posts)
@@ -29,9 +42,9 @@ const ArticlesByCategory = ({ posts, categories }) => {
   return (
     <div className={styles.articlesByCategoryWrapper}>
       {Object.entries(articlesDivided)
-        .sort(i => i[0] === "tranding" ? -1 : 0)
+        .sort((a, b) => orderByCategory[a[0]] - orderByCategory[b[0]])
         .map((i, idx) => (
-          <div className={styles.dividedSection}>
+          <div key={idx} className={styles.dividedSection}>
             <div className={styles.dividedSectionHead}>
               <span
                 className="section-title"
@@ -39,6 +52,12 @@ const ArticlesByCategory = ({ posts, categories }) => {
               >
                 {i[0] !== "tranding" ? "." : ""}{i[0]}
               </span>
+
+              {i[0] !== "tranding" && (
+                <button>
+                  <ArrowRightIcon/> more
+                </button>
+              )}
             </div>
             <div className={styles.dividedSectionArticles}>
               {i[1].map((i, idx) => (

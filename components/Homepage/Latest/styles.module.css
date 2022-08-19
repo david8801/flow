@@ -4,17 +4,9 @@
 }
 
 .latestWrapper > span {
-  margin-bottom: 16px;
+  color: var(--main-text-color)
 }
 
 .latestWrapper > div + div {
   margin-top: 32px;
-}
-
-.latestHeader {
-
-}
-
-.latestHeader span {
-  color: var(--main-text-color)
 }

@@ -7,9 +7,7 @@ const Latest = ({ posts }) => {
 
   return (
     <div className={styles.latestWrapper}>
-      <div className={styles.latestHeader}>
-        <span className="section-title">the latest</span>
-      </div>
+      <span className="section-title">the latest</span>
       {latestPosts.map((i, idx) => (
         <ArticleRow key={idx} data={i.data} showSubtitle size={"small"}/>
       ))}

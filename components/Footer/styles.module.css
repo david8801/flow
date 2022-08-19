@@ -1,0 +1,68 @@
+.footerWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 65px 10px;
+  background-color: black;
+  text-align: center;
+}
+
+.footerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 50px;
+  color: #B987F2;
+  display: flex;
+  align-items: center;
+}
+
+.email svg {
+  margin-right: 34px;
+}
+
+.email svg path {
+  fill: #B987F2;
+}
+
+.categories {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+}
+
+.categories > * + * {
+  margin-left: 32px;
+}
+
+.categories span {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.media > * + * {
+  margin-left: 24px;
+}
+
+.copyright {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  color: #FFFFFF;
+  margin-top: 50px;
+}
