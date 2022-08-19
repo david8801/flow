@@ -37,6 +37,7 @@ const SidebarContent = ({
       </div>
 
       <div className={styles.categories}>
+        <span style={{ color: "#B987F2" }}>home</span>
         {categories.map(({ data }, idx) => (
           <span key={idx} style={{ color: data.color }}>{data.name}</span>
         ))}

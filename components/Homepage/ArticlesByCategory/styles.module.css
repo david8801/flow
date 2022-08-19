@@ -22,4 +22,5 @@
 
 .dividedSectionHead > span {
   cursor: pointer;
+  color: var(--main-text-color)
 }

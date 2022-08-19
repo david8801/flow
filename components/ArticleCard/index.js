@@ -15,15 +15,15 @@ const ArticleCard = ({ data, showSubtitle }) => {
         <span style={{ color: sponsored ? "white" : category_color }} className={styles.category}>
           .{category}
         </span>
-          <span className={`${styles.date} theme-grey-text`}>
+          <span className={styles.date}>
           {moment(date).format('D MMMM HH:mm')}
         </span>
         </div>
-        <span className={`${styles.title} theme-text`}>
+        <span className={styles.title}>
         {title}
       </span>
         {showSubtitle && (
-          <span className={`${styles.subtitle} theme-darkgrey-text`}>
+          <span className={styles.subtitle}>
           {subtitle}
         </span>
         )}

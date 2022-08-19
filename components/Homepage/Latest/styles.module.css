@@ -10,3 +10,11 @@
 .latestWrapper > div + div {
   margin-top: 32px;
 }
+
+.latestHeader {
+
+}
+
+.latestHeader span {
+  color: var(--main-text-color)
+}

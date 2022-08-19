@@ -2,7 +2,9 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 24px;
-  padding-bottom: 108px;
+  padding: var(--distance-top) 64px 32px;
+  margin: var(--negative-distance-top) -64px 0;
+  background-color: black;
 }
 
 .mainArticle {
@@ -16,7 +18,7 @@
   margin: 0 32px;
   position: absolute;
   bottom: 0;
-  transform: translateY(50%);
+  transform: translateY(86px);
   cursor: pointer;
 }
 

@@ -51,6 +51,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
+  color: var(--gray-text-color)
 }
 
 .title {
@@ -60,6 +61,7 @@
   position: relative;
   white-space: pre-wrap;
   margin-top: 8px;
+  color: var(--main-text-color)
 }
 
 .subtitle {
@@ -67,4 +69,5 @@
   font-size: 16px;
   line-height: 27px;
   margin-top: 16px;
+  color: var(--dark-gray-text-color)
 }

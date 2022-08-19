@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./styles.module.css";
 import {Discord, Instagram, Logo, Telegram, Twitter} from "../../icons/header";
 import Switch from "../ui/Switch";
@@ -31,7 +31,7 @@ const HeaderContent = ({
             <Instagram/>
           </div>
           <Link href={"/"}>
-            <Logo/>
+            <Logo height={72}/>
           </Link>
           <div className={styles.actions}>
             <div className={styles.switches}>
@@ -53,6 +53,7 @@ const HeaderContent = ({
       </div>
       <div className={`${styles.categoriesWrapper} categories-wrapper`}>
         <div id={"categories"} className={styles.categories}>
+          <span style={{ color: "#B987F2" }}>home</span>
           {categories.map(({ data }, idx) => (
             <span key={idx} style={{ color: data.color }}>{data.name}</span>
           ))}

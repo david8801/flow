@@ -16,7 +16,7 @@ const StateManager = ({ children }) => {
     const storageSideNavigation = localStorage.getItem(keys.sideNavigation)
 
     dispatch(setTheme(storageTheme || "light"))
-    dispatch(setSideNavigation(storageSideNavigation ? storageSideNavigation === "true" : false))
+    dispatch(setSideNavigation(storageSideNavigation ? storageSideNavigation === "true" : true))
   }, [])
 
   if (!theme) {
@@ -27,7 +27,7 @@ const StateManager = ({ children }) => {
 
   return (
     <div
-      className={`${theme}-theme ${sideNavigation ? "menu-left" : "menu-top"} ${showRunningText ? "running-text-shown" : ""}`}>
+      className={`state-manager ${theme}-theme ${sideNavigation ? "menu-left" : "menu-top"} ${showRunningText ? "running-text-shown" : ""}`}>
       {showRunningText && (
         <div className={"running-text-wrapper"}>
           <Marquee speed={40} gradient={false}>

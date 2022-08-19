@@ -45,7 +45,27 @@
   font-style: normal;
 }
 
+.state-manager:not(.light-theme) {
+  --main-text-color: white;
+  --gray-text-color: white;
+  --dark-gray-text-color: white
+}
 
+.state-manager.light-theme {
+  --main-text-color: black;
+  --gray-text-color: rgba(186, 186, 186, 1);;
+  --dark-gray-text-color: rgba(93, 94, 94, 1);;
+}
+
+.state-manager:not(.menu-left) {
+  --distance-top: 40px;
+  --negative-distance-top: -40px;
+}
+
+.state-manager.menu-left {
+  --distance-top: 62px;
+  --negative-distance-top: -62px;
+}
 
 html,
 body {
@@ -73,6 +93,7 @@ button {
 
 span, button, h1, h2, h3, h4, h5 {
   font-family: 'Spartan MB';
+  transition: .3s color;
 }
 
 .menu-left .page-content {
@@ -80,7 +101,7 @@ span, button, h1, h2, h3, h4, h5 {
 }
 
 .menu-left.running-text-shown .page-content {
-  padding-top: 92px;
+  padding-top: var(--distance-top);
 }
 
 .menu-top.running-text-shown {
@@ -116,28 +137,6 @@ span, button, h1, h2, h3, h4, h5 {
 
 .running-text-shown .categories-wrapper {
   top: 45px;
-}
-
-.theme-text {
-  transition: .3s color;
-}
-
-.light-theme .theme-text {
-  color: black;
-}
-
-.light-theme .theme-darkgrey-text {
-  color: rgba(93, 94, 94, 1);
-}
-
-.light-theme .theme-grey-text {
-  color: rgba(186, 186, 186, 1)
-}
-
-.dark-theme .theme-darkgrey-text,
-.dark-theme .theme-grey-text,
-.dark-theme .theme-text {
-  color: white
 }
 
 .theme-bg {

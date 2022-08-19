@@ -17,6 +17,49 @@
   padding: 0;
 }
 
+.articleRow:not(.big, .subtitleShown) {
+  height: 121px;
+}
+
+.articleRow:not(.big) .date {
+  color: var(--gray-text-color);
+}
+
+.articleRow:not(.big) .title {
+  color: var(--main-text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.articleRow:not(.big) .subtitle {
+  color: var(--dark-gray-text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.articleRow.big .subtitle,
+.articleRow.big .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.articleRow:not(.big, .subtitleShown) .title {
+  color: white;
+}
+
+.articleRow:not(.big, .subtitleShown) .date {
+  color: white;
+}
+
 .articleRow > div,
 .articleRow > span {
   margin-top: 8px;
