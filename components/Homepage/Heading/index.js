@@ -4,7 +4,7 @@ import ArticleRow from "../../ArticleRow";
 
 const Heading = ({posts}) => {
   const mainPost = posts[0];
-  const additionalPosts = posts.slice(1, 5)
+  const additionalPosts = posts.slice(1, 6)
 
   return (
     <div className={styles.head}>

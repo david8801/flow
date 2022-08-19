@@ -24,10 +24,10 @@ const Footer = ({ categories }) => {
             home
           </span>
         </Link>
-        {categories.map(({ data }, idx) => (
-          <Link href={"/category/" + data.name.split(" ").join("-")} key={idx}>
-            <span style={{ color: data.color }}>
-              {data.name}
+        {categories.map((i, idx) => (
+          <Link href={"/category/" + i.slug} key={idx}>
+            <span style={{ color: i.data.color }}>
+              {i.data.name}
             </span>
           </Link>
         ))}

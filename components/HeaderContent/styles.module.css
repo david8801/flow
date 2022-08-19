@@ -9,6 +9,10 @@
   padding: 28px 80px 0;
 }
 
+.headerContent > svg {
+  cursor: pointer;
+}
+
 .headerContent .media {
   display: flex;
 }

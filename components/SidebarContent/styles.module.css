@@ -8,6 +8,10 @@
   z-index: 100;
 }
 
+.sidebar > svg {
+  cursor: pointer;
+}
+
 .search {
   padding: 8px 0;
   border-bottom: 0.5px solid rgba(186, 186, 186, 0.3);

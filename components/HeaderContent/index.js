@@ -56,10 +56,10 @@ const HeaderContent = ({
           <Link href={"/"}>
             <span style={{ color: "#B987F2" }}>home</span>
           </Link>
-          {categories.map(({ data }, idx) => (
-            <Link href={"/category/" + data.name.split(" ").join("-")}>
-              <span key={idx} style={{ color: data.color }}>
-                {data.name}
+          {categories.map((i, idx) => (
+            <Link href={"/category/" + i.slug} key={idx}>
+              <span style={{ color: i.data.color }}>
+                {i.data.name}
               </span>
             </Link>
           ))}
