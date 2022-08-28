@@ -1,4 +1,4 @@
-import {forwardRef, memo} from 'react';
+import {memo} from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import InputError from '../InputError/index';

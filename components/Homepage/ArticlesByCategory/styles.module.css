@@ -40,6 +40,11 @@
 
 .dividedSectionHead button svg {
   margin-right: 10px;
+  transition: .3s transform;
+}
+
+.dividedSectionHead button:hover svg {
+  transform: translateX(8px);
 }
 
 .dividedSectionHead button svg path {
@@ -48,6 +53,5 @@
 }
 
 .dividedSectionHead > span {
-  cursor: pointer;
   color: var(--main-text-color)
 }

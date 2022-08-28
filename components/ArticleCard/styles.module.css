@@ -22,6 +22,10 @@
 }
 
 .articleCard.sponsored .articleCardContent {
+  padding: 0 16px 16px;
+}
+
+.articleCard.horizontal.sponsored .articleCardContent {
   padding: 16px;
 }
 

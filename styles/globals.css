@@ -62,11 +62,25 @@
 .state-manager:not(.menu-left) {
   --distance-top: 40px;
   --negative-distance-top: -40px;
+  --sticky-distance: 72px;
+  --sticky-distance-no-categories: 0;
+}
+
+.state-manager:not(.menu-left).running-text-shown {
+  --sticky-distance: 117px;
+  --sticky-distance-no-categories: 45px;
 }
 
 .state-manager.menu-left {
   --distance-top: 62px;
   --negative-distance-top: -62px;
+  --sticky-distance: 0;
+  --sticky-distance-no-categories: 0;
+}
+
+.state-manager.menu-left.running-text-shown {
+  --sticky-distance: 45px;
+  --sticky-distance-no-categories: 45px;
 }
 
 html,
@@ -97,7 +111,7 @@ input {
   outline: none;
 }
 
-span, button, h1, h2, h3, h4, h5 {
+span, button, h1, h2, h3, h4, h5, li {
   font-family: 'Spartan MB';
   transition: .3s color;
 }
@@ -162,4 +176,24 @@ span, button, h1, h2, h3, h4, h5 {
   font-size: 25px;
   line-height: 35px;
   color: #0B0017;
+}
+
+.be-updated {
+  width: 100%;
+  max-width: 606px;
+  height: 264px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.be-updated > span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
 }

@@ -12,6 +12,7 @@
   justify-content: space-between;
 }
 
+.media svg,
 .footerTop > svg {
   cursor: pointer;
 }
@@ -27,6 +28,11 @@
 
 .email svg {
   margin-right: 34px;
+  transition: .3s transform;
+}
+
+.email:hover svg {
+  transform: translateX(24px);
 }
 
 .email svg path {

@@ -14,7 +14,7 @@ export default function Home({ posts, categories }) {
   console.log("categories", categories)
 
   return (
-    <RenderContent categories={categories}>
+    <>
       <Head>
         <title>Flow</title>
         <meta name="description" content="Flow blog"/>
@@ -27,7 +27,7 @@ export default function Home({ posts, categories }) {
           <Latest posts={posts}/>
         </div>
       </div>
-    </RenderContent>
+    </>
   )
 }
 
@@ -38,9 +38,11 @@ export async function getStaticProps() {
   posts = posts.map(i => {
     const category = categories.find(j => i.data.category === j.data.name)
     return {
-    ...i,
-    data: { ...i.data, category_color: category?.data.color, category_order: category?.data.order }
-  }})
+      ...i,
+      category_slug: category.slug,
+      data: { ...i.data, category_color: category?.data.color, category_order: category?.data.order }
+    }
+  })
 
   return {
     props: { posts, categories }

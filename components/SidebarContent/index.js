@@ -23,7 +23,7 @@ const SidebarContent = ({
   return (
     <div className={`${headerStyles.header} ${styles.sidebar}`}>
       <Link href={"/"}>
-        <Logo width={134}/>
+        <Logo width={134} height={50} style={{minWidth: '134px', minHeight: "50px"}}/>
       </Link>
       <div className={styles.search}>
         <SearchWrapper

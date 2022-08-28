@@ -45,7 +45,7 @@
 }
 
 .categoriesWrapper {
-  padding: 21px 80px;
+  padding: 21px 80px 17px;
   position: sticky;
   z-index: 100;
   top: 0;
@@ -65,6 +65,19 @@
   align-items: center;
   overflow: auto;
   scroll-behavior: smooth;
+  border-bottom: 0.5px solid rgba(186, 186, 186, .4);
+  position: relative;
+}
+
+.categories form {
+  margin-bottom: -4px;
+}
+
+.activeCategoryPointer {
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  transition: .3s;
 }
 
 .categories span {
@@ -73,9 +86,11 @@
   line-height: 30px;
   letter-spacing: 2px;
   cursor: pointer;
+  white-space: nowrap;
+  padding-bottom: 4px;
 }
 
-.categories > * + * {
+.categories > *:not(.activeCategoryPointer) + *:not(.activeCategoryPointer) {
   margin-left: 32px;
 }
 

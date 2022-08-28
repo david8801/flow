@@ -4,18 +4,25 @@ import * as keys from "../helpers/keys";
 import {setSideNavigation, setTheme} from "../store/main/mainSlice";
 import {getSideNavigationSelector, getThemeSelector} from "../store/main/selectors";
 import Marquee from "react-fast-marquee";
+import SignToNews from "./SignToNews";
 
 const StateManager = ({ children }) => {
   const dispatch = useDispatch()
   const theme = useSelector(getThemeSelector)
   const sideNavigation = useSelector(getSideNavigationSelector)
   const [showRunningText, setShowRunningText] = useState(true);
+  const [subscribePopup, setSubscribePopup] = useState(true);
 
   useEffect(() => {
     const storageTheme = localStorage.getItem(keys.theme)
     const storageSideNavigation = localStorage.getItem(keys.sideNavigation)
+    let defaultTheme = "light"
 
-    dispatch(setTheme(storageTheme || "light"))
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      defaultTheme = "dark"
+    }
+
+    dispatch(setTheme(storageTheme || defaultTheme))
     dispatch(setSideNavigation(storageSideNavigation ? storageSideNavigation === "true" : true))
   }, [])
 
@@ -24,6 +31,8 @@ const StateManager = ({ children }) => {
       {children}
     </div>
   }
+
+  const closeSubscriptionPopup = () => setSubscribePopup(false)
 
   return (
     <div
@@ -36,9 +45,13 @@ const StateManager = ({ children }) => {
           </Marquee>
         </div>
       )}
-      <div>
-        {children}
-      </div>
+      {children}
+      {subscribePopup && (
+        <div className="be-updated">
+          <span onClick={closeSubscriptionPopup}>close</span>
+          <SignToNews type={"popup"}/>
+        </div>
+      )}
     </div>
   )
 };

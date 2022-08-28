@@ -2,8 +2,12 @@ import React, {useEffect, useMemo, useState} from 'react';
 import styles from "./styles.module.css";
 import ArticleCard from "../../ArticleCard";
 import {ArrowRightIcon} from "../../../icons/shared";
+import {useRouter} from "next/router";
 
 const ArticlesByCategory = ({ posts, categories }) => {
+  const router = useRouter();
+  const [articlesDivided, setArticlesDivided] = useState({});
+
   const orderByCategory = useMemo(() => {
     return categories.reduce((acc, val) => {
       console.log("val", val)
@@ -16,9 +20,7 @@ const ArticlesByCategory = ({ posts, categories }) => {
       return acc
     }, {})
   }, [categories])
-  const [articlesDivided, setArticlesDivided] = useState({});
 
-  console.log(posts)
   useEffect(() => {
     let final = posts.reduce((acc, val) => {
       const category = val.data.category;
@@ -39,6 +41,7 @@ const ArticlesByCategory = ({ posts, categories }) => {
     setArticlesDivided(final)
   }, [posts])
 
+  console.log("articlesDivided",articlesDivided)
   return (
     <div className={styles.articlesByCategoryWrapper}>
       {Object.entries(articlesDivided)
@@ -48,7 +51,10 @@ const ArticlesByCategory = ({ posts, categories }) => {
             <div className={styles.dividedSectionHead}>
               <span
                 className="section-title"
-                {...(i[0] !== "tranding" && { style: { color: i[1][0].data.category_color } })}
+                {...(i[0] !== "tranding" && {
+                  style: { color: i[1][0].data.category_color, cursor: "pointer" },
+                  onClick: () => router.push("/category/" + i[1][0].category_slug)
+                })}
               >
                 {i[0] !== "tranding" ? "." : ""}{i[0]}
               </span>
