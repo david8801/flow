@@ -6,6 +6,7 @@ subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus mi duis
   mi duis tempus, dolor.
 category: tech
 date: 2022-08-12T13:15:46.633Z
+sponsored: false
 author: David
 tags:
   - name: long
@@ -22,5 +23,9 @@ Despite a major decline in trading volume across the broader nonfungible token (
 The $2.6 million transaction makes the sale of CryptoPunk 4464 — one of just 24 ape-themed CryptoPunks — the largest NFT sale of the last 30 days across the entire market.
 
 [Link](google.com)
+
+
+
+> Unfortunately for nonfungible enthusiasts, over the last three months, the NFT market capitalization suffered a drop of 32% while losing over 70% of its trading volume, according to data from NFTGo.
 
 ![](img/4.jpg)
