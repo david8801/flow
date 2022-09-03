@@ -6,6 +6,7 @@ subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus mi duis
   mi duis tempus, dolor.
 category: tech
 date: 2022-08-12T13:15:46.633Z
+sponsored: false
 author: David
 tags:
   - name: long
@@ -23,4 +24,6 @@ The $2.6 million transaction makes the sale of CryptoPunk 4464 — one of just 2
 
 [Link](google.com)
 
-![](img/4.jpg)
+> Unfortunately for nonfungible enthusiasts, over the last three months, the NFT market capitalization suffered a drop of 32% while losing over 70% of its trading volume, according to data from NFTGo.
+
+![test alt](img/4.jpg "test title")
