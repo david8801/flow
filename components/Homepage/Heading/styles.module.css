@@ -12,6 +12,7 @@
   flex-direction: column;
   position: relative;
   height: max-content;
+  cursor: pointer;
 }
 
 .mainArticleContent {

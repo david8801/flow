@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from "./styles.module.css";
 import ArticleRow from "../../ArticleRow";
+import {useRouter} from "next/router";
 
 const Heading = ({ posts }) => {
+  const router = useRouter();
   const mainPost = posts[0];
   const additionalPosts = posts.slice(1, 6)
 
+  const openMainArticle = () => router.push("/article/" + mainPost.slug)
   return (
     <div className={styles.head}>
-      <div className={styles.mainArticle}>
+      <div onClick={openMainArticle} className={styles.mainArticle}>
         <img src={mainPost.data.image} alt=""/>
         <div className={styles.mainArticleContent}>
           <ArticleRow
