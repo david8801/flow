@@ -24,8 +24,6 @@ The $2.6 million transaction makes the sale of CryptoPunk 4464 — one of just 2
 
 [Link](google.com)
 
-
-
 > Unfortunately for nonfungible enthusiasts, over the last three months, the NFT market capitalization suffered a drop of 32% while losing over 70% of its trading volume, according to data from NFTGo.
 
-![](img/4.jpg)
+![test alt](img/4.jpg "test title")
