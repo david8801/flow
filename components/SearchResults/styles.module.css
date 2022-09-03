@@ -3,7 +3,7 @@
   left: var(--search-box-left);
   right: var(--search-box-right);
   top: var(--search-box-top);
-  z-index: 200;
+  z-index: 230;
   width: 375px;
   background-color: white;
   display: flex;

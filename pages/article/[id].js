@@ -116,7 +116,7 @@ const Article = ({ posts, post, category }) => {
             </div>
 
             <div className={styles.tagsWrapper}>
-              {post.data.tags.map(({ name }) => (
+              {post.data.tags?.map(({ name }) => (
                 <span>{name}</span>
               ))}
             </div>

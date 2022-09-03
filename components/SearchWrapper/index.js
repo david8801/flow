@@ -29,7 +29,7 @@ const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sideb
           value={value}
           onChange={handleSearch}
           type="text"
-          onBlur={() => setTimeout(clearResults, 100)}
+          onBlur={() => setTimeout(clearResults, 200)}
           onFocus={submitSearch}
         />
       </form>

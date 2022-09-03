@@ -69,6 +69,7 @@
 
 .show-more.disabled {
   opacity: .6;
+  cursor: default;
 }
 .pagination-item.disabled {
   pointer-events: none;

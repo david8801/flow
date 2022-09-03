@@ -57,8 +57,10 @@ const Pagination = ({
       </div>
       <span
         onClick={() => {
-          setOffset(offset + 10)
-          onPageChange(currentPage + 1)
+          if (currentPage !== lastPage) {
+            setOffset(offset + 10)
+            onPageChange(currentPage + 1)
+          }
         }}
         className={classnames("show-more", { disabled: currentPage === lastPage })}
       >
