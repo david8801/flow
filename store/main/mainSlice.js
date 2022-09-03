@@ -3,7 +3,8 @@ import {theme, sideNavigation} from "../../helpers/keys";
 
 const initialState = {
   theme: "light",
-  sideNavigation: false
+  sideNavigation: false,
+  runningTextShown: true
 }
 
 export const mainSlice = createSlice({
@@ -17,7 +18,7 @@ export const mainSlice = createSlice({
     setTheme: (state, {payload}) => {
       state.theme = payload
       localStorage.setItem(theme, payload)
-    }
+    },
   }
 })
 

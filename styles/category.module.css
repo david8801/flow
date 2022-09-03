@@ -8,7 +8,7 @@
   padding: 24px 0;
   position: sticky;
   top: var(--sticky-distance-no-categories);
-  z-index: 110;
+  z-index: 220;
   transition: .3s background-color;
   background-color: var(--main-bg-color);
 }

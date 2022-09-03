@@ -1,10 +1,12 @@
 import React, {useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react';
 import styles from "./styles.module.css";
-import {Discord, Instagram, Logo, Telegram, Twitter} from "../../icons/header";
+import {Discord, Facebook, Instagram, Logo, Telegram, Twitter} from "../../icons/header";
 import Switch from "../ui/Switch";
 import Link from "next/link";
 import SearchWrapper from "../SearchWrapper";
 import {useRouter} from "next/router";
+import {useSelector} from "react-redux";
+import {getRunningTextShownSelector} from "../../store/main/selectors";
 
 const HeaderContent = ({
                          sideNavigation,
@@ -18,12 +20,14 @@ const HeaderContent = ({
                          submitSearch,
                          searchActive,
                          setSearchActive,
-                         categories
+                         categories,
+                         clearResults
                        }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const lastWidth = useRef();
   const router = useRouter()
   const categorySlugs = useMemo(() => categories.map(i => i.slug), [categories])
+  const runningTextShown = useSelector(getRunningTextShownSelector)
 
   console.log(router)
   useEffect(() => {
@@ -55,11 +59,28 @@ const HeaderContent = ({
   useEffect(() => {
     setTimeout(() => onResize(), 100)
     window.addEventListener("resize", () => onResize())
+    window.addEventListener("scroll", onScroll)
 
     return () => {
       window.removeEventListener("resize", () => onResize())
+      window.removeEventListener("scroll", onScroll)
     }
   }, [])
+
+  const onScroll = () => {
+    const initialOffsetTop = 100 + (runningTextShown ? 45 : 0);
+    const header = document.getElementById("categories-wrapper"),
+      stateManager = document.getElementById("state-manager"),
+      offsetTop = header?.offsetTop;
+
+    console.log(offsetTop)
+
+    if (initialOffsetTop !== offsetTop) {
+      stateManager.classList.add("categories-sticky")
+    } else {
+      stateManager.classList.remove("categories-sticky")
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -97,6 +118,7 @@ const HeaderContent = ({
     if (activeCategory) {
       const searchElem = document.getElementById("search-form")
 
+      // TODO: new IntersectionObserver to determine if element is currently visible on screen
       const resizeObserver = new ResizeObserver(onResize);
 
       resizeObserver.observe(searchElem);
@@ -112,6 +134,7 @@ const HeaderContent = ({
         <div className={styles.headerContent}>
           <div className={styles.media}>
             <Telegram/>
+            <Facebook/>
             <Twitter/>
             <Discord/>
             <Instagram/>
@@ -137,7 +160,7 @@ const HeaderContent = ({
           </div>
         </div>
       </div>
-      <div className={`${styles.categoriesWrapper} categories-wrapper`}>
+      <div id={"categories-wrapper"} className={`${styles.categoriesWrapper} categories-wrapper`}>
         <div id={"categories"} className={styles.categories}>
           {activeCategory && (
             <div
@@ -174,6 +197,7 @@ const HeaderContent = ({
             value={search}
             active={searchActive}
             setActive={setSearchActive}
+            clearResults={clearResults}
           />
         </div>
       </div>

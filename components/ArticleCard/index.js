@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from "./styles.module.css"
 import moment from "moment"
+import {useRouter} from "next/router";
 
-const ArticleCard = ({ data, showSubtitle, horizontal }) => {
-  const { category, category_color, date, subtitle, title, image, sponsored } = data
+const ArticleCard = ({ data, slug, showSubtitle, horizontal }) => {
+  const { category, category_color, date, subtitle, title, image, sponsored } = data;
+  const router = useRouter();
+
+  const openArticle = () => router.push("/article/" + slug)
   return (
     <div
       {...(sponsored && { style: {backgroundColor: category_color}})}
+      onClick={openArticle}
       className={`${styles.articleCard} ${sponsored ? styles.sponsored : ""} ${horizontal ? styles.horizontal : ""}`}
     >
       <img src={process.env.NEXT_PUBLIC_WEBSITE_URL + "/" + image} alt=""/>

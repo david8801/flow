@@ -18,7 +18,8 @@ const SidebarContent = ({
                           submitSearch,
                           searchActive,
                           setSearchActive,
-                          categories
+                          categories,
+                          clearResults
                         }) => {
   return (
     <div className={`${headerStyles.header} ${styles.sidebar}`}>
@@ -32,6 +33,7 @@ const SidebarContent = ({
           setActive={setSearchActive}
           onChange={setSearch}
           value={search}
+          clearResults={clearResults}
           sidebar
         />
       </div>

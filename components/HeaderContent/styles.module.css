@@ -47,7 +47,7 @@
 .categoriesWrapper {
   padding: 21px 80px 17px;
   position: sticky;
-  z-index: 100;
+  z-index: 210;
   top: 0;
   background-color: black;
 }

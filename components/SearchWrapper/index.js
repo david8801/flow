@@ -1,9 +1,9 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 import styles from "./styles.module.css";
 import Input from "../ui/Input";
 import {SearchIcon} from "../../icons/header";
 
-const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sidebar }) => {
+const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sidebar, clearResults }) => {
   const handleSearch = (e) => {
     onChange(e.target.value)
   }
@@ -22,9 +22,16 @@ const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sideb
   return (
     <div id={"search-form"} className={`${styles.searchWrapper} ${sidebar ? styles.sidebarSearch : ""}`}>
       <form className={`${styles.searchForm} ${active ? styles.searchFormActive : ""}`}
-
             onSubmit={submitSearch}>
-        <Input id={"search-input"} StartIcon={<SearchIcon/>} value={value} onChange={handleSearch} type="text"/>
+        <Input
+          id={"search-input"}
+          StartIcon={<SearchIcon/>}
+          value={value}
+          onChange={handleSearch}
+          type="text"
+          onBlur={() => setTimeout(clearResults, 100)}
+          onFocus={submitSearch}
+        />
       </form>
       <span
         className={`${styles.searchHandler} ${active ? styles.searchHandlerInactive : ""}`}

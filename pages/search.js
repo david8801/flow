@@ -1,27 +1,27 @@
 import React, {useEffect, useState} from 'react';
+import {useRouter} from "next/router";
 import Head from "next/head";
-import styles from "../../styles/category.module.css";
-import getPosts from "../api/getPosts";
-import getCategories from "../api/getCategories";
-import ArticleCard from "../../components/ArticleCard";
-import SignToNews from "../../components/SignToNews";
+import styles from "../styles/category.module.css";
+import getPosts from "./api/getPosts";
+import getCategories from "./api/getCategories";
+import ArticleCard from "../components/ArticleCard";
+import SignToNews from "../components/SignToNews";
 import {useSelector} from "react-redux";
-import {getRunningTextShownSelector, getSideNavigationSelector} from "../../store/main/selectors";
-import moment from "moment";
-import Pagination from "../../components/Pagination";
+import {getRunningTextShownSelector, getSideNavigationSelector} from "../store/main/selectors";
+import Pagination from "../components/Pagination";
 
-const Category = ({ posts, category, tags }) => {
-  const { name, color } = category.data;
+const Search = ({ posts }) => {
   const sideNavigation = useSelector(getSideNavigationSelector)
   const runningTextShown = useSelector(getRunningTextShownSelector)
   const [sort, setSort] = useState("recent");
   const [page, setPage] = useState(1);
-  const [activeTags, setActiveTags] = useState([]);
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffset] = useState(0);
+  const router = useRouter();
+  const searchValue = router.query.value;
   const runningTextHeight = runningTextShown ? 45 : 0
 
   useEffect(() => {
-    let initialOffsetTop = sideNavigation ? runningTextHeight : (195 + runningTextHeight);
+    let initialOffsetTop = sideNavigation ? runningTextHeight : (194 + runningTextHeight);
 
     // additional function is used because removeEventListener cannot remove the function which is receiving parameters
     const scrollListener = () => {
@@ -54,30 +54,19 @@ const Category = ({ posts, category, tags }) => {
     setSort(sort === "recent" ? "the oldest" : "recent")
   }
 
-  const toggleTags = (name) => {
-    setActiveTags(activeTags.includes(name) ? activeTags.filter(i => i !== name) : [...activeTags, name])
-  }
-
-  console.log("posts", posts)
-  console.log("tags", tags)
-  console.log(activeTags)
-  const filteredPosts = (
-    posts
-      .filter(i => activeTags.length ? activeTags.every(j => i.data.tags?.map(i => i.name).includes(j)) : true)
-      .sort((a, b) => sort === "recent" ? moment(b.data.date).diff(a.data.date) : moment(a.data.date).diff(b.data.date))
-  );
+  const filteredPosts = posts.filter(i => i.data.title.includes(searchValue));
   return (
     <>
       <Head>
-        <title>{category.data.name} - Flow</title>
-        <meta name="description" content={`${category.data.name} - Flow blog`}/>
+        <title>{searchValue} Search - Flow</title>
+        <meta name="description" content={`${searchValue} Search - Flow blog`}/>
         <link rel="icon" href="/public/favicon.ico"/>
       </Head>
       <div>
         <div id={"category-header"} className={styles.categoryTopWrapper}>
           <div className={styles.categoryTop}>
-            <span style={{ color: color }}>
-              .{name}
+            <span style={{ color: "white" }}>
+              .search result "{searchValue}"
             </span>
 
             <div onClick={toggleSort} className={styles.sortWrapper}>
@@ -85,13 +74,6 @@ const Category = ({ posts, category, tags }) => {
               <span className={styles.sortValue}>
                 {sort}
               </span>
-            </div>
-            <div className={styles.tagsWrapper}>
-              {tags.map(i => (
-                <span className={activeTags.includes(i) ? styles.activeTag : ""} onClick={() => toggleTags(i)}>
-                  {i}
-                </span>
-              ))}
             </div>
           </div>
         </div>
@@ -127,46 +109,23 @@ const Category = ({ posts, category, tags }) => {
   )
 }
 
-export async function getStaticPaths() {
-  const categories = await getCategories()
-
-  // TODO: probably will need to be changed when CRM will be backended
-  console.log(categories.map(i => ({ params: { id: i.slug } })))
-  return {
-    paths: categories.map(i => ({ params: { id: i.slug } })),
-    fallback: false
-  }
-}
-
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   let posts = await getPosts()
   const categories = await getCategories()
-  const category = categories.find(i => i.slug === params.id)
 
-  posts = posts
-    .filter(i => i.data.category === category.data.name)
-    .map(i => ({
+  posts = posts.map(i => {
+    const category = categories.find(j => i.data.category === j.data.name)
+    return {
       ...i,
-      data: {
-        ...i.data,
-        category_color: category.data.color
-      }
-    }))
-
-  let tags = [];
-  console.log(posts)
-  posts.map(i => i.data.tags)
-    .flat(2)
-    .filter(i => i)
-    .forEach(i => {
-      if (!tags.includes(i.name || "")) {
-        tags.push(i.name || "")
-      }
-    });
+      category_slug: category.slug,
+      data: { ...i.data, category_color: category?.data.color, category_order: category?.data.order }
+    }
+  })
 
   return {
-    props: { posts, categories, category, tags }
+    props: { posts, categories }
   }
 }
 
-export default Category;
+
+export default Search;

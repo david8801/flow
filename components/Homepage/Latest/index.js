@@ -9,7 +9,7 @@ const Latest = ({ posts }) => {
     <div className={styles.latestWrapper}>
       <span className="section-title">the latest</span>
       {latestPosts.map((i, idx) => (
-        <ArticleRow key={idx} data={i.data} showSubtitle size={"small"}/>
+        <ArticleRow key={idx} slug={i.slug} data={i.data} showSubtitle size={"small"}/>
       ))}
     </div>
   );

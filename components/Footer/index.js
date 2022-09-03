@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from "./styles.module.css"
-import {Discord, Instagram, Logo, Telegram, Twitter} from "../../icons/header";
+import {Discord, Facebook, Instagram, Logo, Telegram, Twitter} from "../../icons/header";
 import {ArrowRightIcon} from "../../icons/shared";
 import Link from "next/link";
 
@@ -34,6 +34,7 @@ const Footer = ({ categories }) => {
       </div>
       <div className={styles.media}>
         <Telegram/>
+        <Facebook/>
         <Twitter/>
         <Discord/>
         <Instagram/>

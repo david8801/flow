@@ -3,10 +3,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SignToNews from "./SignToNews";
 
-const RenderContent = ({ children, categories }) => {
+const RenderContent = ({ children, categories, posts }) => {
   return (
     <>
-      <Header categories={categories}/>
+      <Header categories={categories} posts={posts}/>
       <div className={"page-content theme-bg"}>
         {children}
 

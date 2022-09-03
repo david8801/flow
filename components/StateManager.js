@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import * as keys from "../helpers/keys";
 import {setSideNavigation, setTheme} from "../store/main/mainSlice";
-import {getSideNavigationSelector, getThemeSelector} from "../store/main/selectors";
+import {getRunningTextShownSelector, getSideNavigationSelector, getThemeSelector} from "../store/main/selectors";
 import Marquee from "react-fast-marquee";
 import SignToNews from "./SignToNews";
 
@@ -10,7 +10,7 @@ const StateManager = ({ children }) => {
   const dispatch = useDispatch()
   const theme = useSelector(getThemeSelector)
   const sideNavigation = useSelector(getSideNavigationSelector)
-  const [showRunningText, setShowRunningText] = useState(true);
+  const showRunningText = useSelector(getRunningTextShownSelector)
   const [subscribePopup, setSubscribePopup] = useState(true);
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const StateManager = ({ children }) => {
 
   return (
     <div
+      id={"state-manager"}
       className={`state-manager ${theme}-theme ${sideNavigation ? "menu-left" : "menu-top"} ${showRunningText ? "running-text-shown" : ""}`}>
       {showRunningText && (
         <div className={"running-text-wrapper"}>

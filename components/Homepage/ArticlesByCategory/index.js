@@ -68,6 +68,7 @@ const ArticlesByCategory = ({ posts, categories }) => {
             <div className={styles.dividedSectionArticles}>
               {i[1].map((i, idx) => (
                 <ArticleCard
+                  slug={i.slug}
                   key={idx}
                   data={i.data}
                   showSubtitle={!i.data.sponsored}

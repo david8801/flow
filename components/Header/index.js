@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {getSideNavigationSelector, getThemeSelector} from "../../store/main/selectors";
 import {setSideNavigation, setTheme} from "../../store/main/mainSlice";
 import HeaderContent from "../HeaderContent";
 import SidebarContent from "../SidebarContent";
-import getPosts from "../../pages/api/getPosts";
-import getCategories from "../../pages/api/getCategories";
+import SearchResults from "../SearchResults";
+import {debounce} from "lodash";
 
-const Header = ({ categories }) => {
+const Header = ({ categories, posts }) => {
   const [searchValue, setSearchValue] = useState("");
   const [searchActive, setSearchActive] = useState(false);
   const [searchResults, setSearchResults] = useState([])
@@ -23,45 +23,71 @@ const Header = ({ categories }) => {
     dispatch(setSideNavigation(e.target.checked))
   }
 
-  const submitSearch = (e) => {
-    e.preventDefault()
-
-    setSearchActive(false)
+  const closeSearch = () => {
+    setSearchValue("")
+    clearResults()
   }
 
-  return sideNavigation
-    ? (
-      <SidebarContent
-        sideNavigation={sideNavigation}
-        theme={theme}
-        toggleDarkMode={toggleDarkMode}
-        toggleSideNavigation={toggleSideNavigation}
-        search={searchValue}
-        setSearch={setSearchValue}
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-        submitSearch={submitSearch}
-        searchActive={searchActive}
-        setSearchActive={setSearchActive}
-        categories={categories}
-      />
-    )
-    : (
-      <HeaderContent
-        sideNavigation={sideNavigation}
-        theme={theme}
-        toggleDarkMode={toggleDarkMode}
-        toggleSideNavigation={toggleSideNavigation}
-        search={searchValue}
-        setSearch={setSearchValue}
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-        submitSearch={submitSearch}
-        searchActive={searchActive}
-        setSearchActive={setSearchActive}
-        categories={categories}
-      />
-    );
+  const clearResults = () => {
+    setSearchResults([])
+  }
+
+  const submitSearch = (e) => {
+    e?.preventDefault()
+
+    setSearchValue(searchValue => {
+      console.log("terasdf", posts.filter(i => i.data.title.includes(searchValue)))
+      setSearchResults([...posts.filter(i => i.data.title.includes(searchValue))])
+      return searchValue
+    })
+    // setSearchActive(false)
+  }
+  const searchDebounce = useMemo(() => debounce(submitSearch, 500), [])
+
+  useEffect(() => {
+    searchDebounce()
+  }, [searchValue])
+
+  return <>
+    {sideNavigation
+      ? (
+        <SidebarContent
+          sideNavigation={sideNavigation}
+          theme={theme}
+          toggleDarkMode={toggleDarkMode}
+          toggleSideNavigation={toggleSideNavigation}
+          search={searchValue}
+          setSearch={setSearchValue}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          submitSearch={submitSearch}
+          searchActive={searchActive}
+          setSearchActive={setSearchActive}
+          categories={categories}
+          clearResults={clearResults}
+        />
+      )
+      : (
+        <HeaderContent
+          sideNavigation={sideNavigation}
+          theme={theme}
+          toggleDarkMode={toggleDarkMode}
+          toggleSideNavigation={toggleSideNavigation}
+          search={searchValue}
+          setSearch={setSearchValue}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          submitSearch={submitSearch}
+          searchActive={searchActive}
+          setSearchActive={setSearchActive}
+          categories={categories}
+          clearResults={clearResults}
+        />
+      )}
+    {!!searchValue && !!searchResults.length && (
+      <SearchResults posts={searchResults} searchValue={searchValue} onClose={closeSearch}/>
+    )}
+  </>;
 };
 
 export default Header;

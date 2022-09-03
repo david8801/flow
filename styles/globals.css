@@ -63,12 +63,17 @@
   --distance-top: 40px;
   --negative-distance-top: -40px;
   --sticky-distance: 72px;
-  --sticky-distance-no-categories: 0;
+  --sticky-distance-no-categories: 0px;
+  --search-box-top: 173px;
+  --search-box-right: 81px;
+  --search-box-left: unset;
+  --search-box-position: absolute;
 }
 
 .state-manager:not(.menu-left).running-text-shown {
   --sticky-distance: 117px;
   --sticky-distance-no-categories: 45px;
+  --search-box-top: 218px;
 }
 
 .state-manager.menu-left {
@@ -76,6 +81,10 @@
   --negative-distance-top: -62px;
   --sticky-distance: 0;
   --sticky-distance-no-categories: 0;
+  --search-box-top: 101px;
+  --search-box-right: unset;
+  --search-box-left: 168px;
+  --search-box-position: fixed;
 }
 
 .state-manager.menu-left.running-text-shown {
@@ -111,7 +120,18 @@ input {
   outline: none;
 }
 
-span, button, h1, h2, h3, h4, h5, li {
+span::selection,
+button::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+p::selection,
+li::selection {
+  background-color: rgba(185, 135, 242, 0.23);
+}
+span, button, h1, h2, h3, h4, h5, li, p {
   font-family: 'Spartan MB';
   transition: .3s color;
 }
@@ -141,7 +161,7 @@ span, button, h1, h2, h3, h4, h5, li {
   height: 45px;
   background: #B987F2;
   color: white;
-  z-index: 100;
+  z-index: 201;
   font-family: "Spartan MB";
   font-style: normal;
   font-weight: 700;
@@ -183,6 +203,7 @@ span, button, h1, h2, h3, h4, h5, li {
   max-width: 606px;
   height: 264px;
   position: fixed;
+  z-index: 111;
   bottom: 0;
   right: 0;
 }
