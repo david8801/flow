@@ -15,6 +15,20 @@ const Header = ({ categories, posts }) => {
   const theme = useSelector(getThemeSelector)
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false);
+    };
+  }, []);
+
+  const escFunction = (event) => {
+    if (event.key === "Escape") {
+      setSearchActive(false)
+    }
+  }
+
   const toggleDarkMode = (e) => {
     dispatch(setTheme(e.target.checked ? "dark" : "light"))
   }
@@ -34,6 +48,11 @@ const Header = ({ categories, posts }) => {
 
   const submitSearch = (e) => {
     e?.preventDefault()
+
+    if (e?.type === "submit" && !searchValue) {
+      setSearchActive(false)
+      return
+    }
 
     setSearchValue(searchValue => {
       console.log("terasdf", posts.filter(i => i.data.title.includes(searchValue)))
