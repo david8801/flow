@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useMemo, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 import Head from "next/head";
 import styles from "../../styles/article.module.css";
 import getPosts from "../api/getPosts";
@@ -72,7 +72,7 @@ const Article = ({ posts, post, category }) => {
       <div>
         <div id={"article-header"} className={styles.articleTopWrapper}>
           <div className={styles.articleMeta}>
-            <span style={{ color: category.data.color }} className={styles.category}>.{category.data.name}</span>
+            <span style={{ color: color }} className={styles.category}>.{name}</span>
             <span className={styles.date}>{moment(post.data.date).format('D MMMM HH:mm')}</span>
           </div>
           <div className={styles.articleMain}>

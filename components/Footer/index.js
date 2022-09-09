@@ -40,7 +40,7 @@ const Footer = ({ categories }) => {
         <Instagram/>
       </div>
       <span className={styles.copyright}>
-        © Flow 2022
+        © The Cymes 2022
       </span>
     </div>
   )

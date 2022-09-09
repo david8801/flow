@@ -11,9 +11,10 @@ const StateManager = ({ children }) => {
   const theme = useSelector(getThemeSelector)
   const sideNavigation = useSelector(getSideNavigationSelector)
   const showRunningText = useSelector(getRunningTextShownSelector)
-  const [subscribePopup, setSubscribePopup] = useState(true);
+  const [subscribePopup, setSubscribePopup] = useState(false);
 
   useEffect(() => {
+    const storageSignToNewsShown = localStorage.getItem(keys.signToNews)
     const storageTheme = localStorage.getItem(keys.theme)
     const storageSideNavigation = localStorage.getItem(keys.sideNavigation)
     let defaultTheme = "light"
@@ -24,6 +25,11 @@ const StateManager = ({ children }) => {
 
     dispatch(setTheme(storageTheme || defaultTheme))
     dispatch(setSideNavigation(storageSideNavigation ? storageSideNavigation === "true" : true))
+
+    console.log('storageSignToNewsShown', storageSignToNewsShown)
+    if (!storageSignToNewsShown) {
+      setTimeout(() => setSubscribePopup(true), 10000)
+    }
   }, [])
 
   if (!theme) {
@@ -32,7 +38,10 @@ const StateManager = ({ children }) => {
     </div>
   }
 
-  const closeSubscriptionPopup = () => setSubscribePopup(false)
+  const closeSubscriptionPopup = () => {
+    localStorage.setItem(keys.signToNews, "seen")
+    setSubscribePopup(false)
+  }
 
   return (
     <div

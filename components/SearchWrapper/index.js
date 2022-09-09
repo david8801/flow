@@ -20,7 +20,7 @@ const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sideb
   }, [active, sidebar])
 
   return (
-    <div id={"search-form"} className={`${styles.searchWrapper} ${sidebar ? styles.sidebarSearch : ""}`}>
+    <div id={`search-form`} className={`${styles.searchWrapper} ${active ? "active-search" : ""} ${sidebar ? styles.sidebarSearch : ""}`}>
       <form className={`${styles.searchForm} ${active ? styles.searchFormActive : ""}`}
             onSubmit={submitSearch}>
         <Input

@@ -1,2 +1,3 @@
-export const theme = "flowTheme";
-export const sideNavigation = "flowSideNavigation"
+export const theme = "cymesTheme";
+export const sideNavigation = "cymesSideNavigation"
+export const signToNews = "cymesSignToNewsShown"

@@ -1,7 +1,7 @@
 import React from 'react';
 import headerStyles from "../HeaderContent/styles.module.css"
 import styles from "./styles.module.css"
-import {Logo, SearchIcon} from "../../icons/header";
+import {Discord, Facebook, Instagram, Logo, SearchIcon, Telegram, Twitter} from "../../icons/header";
 import Switch from "../ui/Switch";
 import Link from "next/link";
 import SearchWrapper from "../SearchWrapper";
@@ -51,6 +51,13 @@ const SidebarContent = ({
             </span>
           </Link>
         ))}
+      </div>
+      <div className={styles.social}>
+        <Telegram width={16} height={16}/>
+        <Facebook width={16} height={16}/>
+        <Twitter width={16} height={16}/>
+        <Discord width={16} height={16}/>
+        <Instagram width={16} height={16}/>
       </div>
       <div className={styles.switches}>
         <Switch

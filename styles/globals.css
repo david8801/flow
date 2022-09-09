@@ -131,7 +131,7 @@ p::selection,
 li::selection {
   background-color: rgba(185, 135, 242, 0.23);
 }
-span, button, h1, h2, h3, h4, h5, li, p {
+span, button, h1, h2, h3, h4, h5, li, p, input {
   font-family: 'Spartan MB';
   transition: .3s color;
 }
@@ -201,7 +201,6 @@ span, button, h1, h2, h3, h4, h5, li, p {
 .be-updated {
   width: 100%;
   max-width: 606px;
-  height: 264px;
   position: fixed;
   z-index: 111;
   bottom: 0;

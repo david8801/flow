@@ -50,9 +50,13 @@
 
 .searchForm input {
   border: none;
-  border-bottom: 2px solid #B987F2;
   background-color: transparent;
-  color: white;
+  color: #B987F2;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  padding-bottom: 16px;
 }
 
 .sidebarSearch .searchForm input {

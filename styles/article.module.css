@@ -1,14 +1,6 @@
 .articleTopWrapper {
   margin-top: -18px;
   padding: 38px 82px;
-  position: sticky;
-  top: var(--sticky-distance-no-categories);
-  z-index: 220;
-  transition: .3s background-color;
-  background-color: var(--main-bg-color);
-}
-
-.articleTopWrapper:global(.sticky) {
   background-color: black;
 }
 

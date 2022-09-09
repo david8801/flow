@@ -34,9 +34,10 @@ const HeaderContent = ({
     const categorySlug = router.pathname === "/" ? 'home' : router.query?.id;
     const activeCategoryElem = document.getElementById(categorySlug);
     const categoryListElem = document.getElementById("categories");
+    const searchElem = document.getElementsByClassName("active-search")?.[0];
 
-    if ((categorySlugs.includes(categorySlug) || categorySlug === "home") && activeCategoryElem) {
-      const position = activeCategoryElem.getBoundingClientRect()
+    if (((categorySlugs.includes(categorySlug) || categorySlug === "home") && activeCategoryElem) || searchElem) {
+      const position = (searchElem || activeCategoryElem).getBoundingClientRect()
       const activeCategoryPointerElem = document.getElementById("active-category-pointer")
 
       if (activeCategoryPointerElem) {
@@ -45,14 +46,21 @@ const HeaderContent = ({
         activeCategoryPointerElem.style.width = (position.width) + "px";
       }
       setActiveCategory(
-        categorySlug === "home"
+        searchElem
           ? {
-            slug: "home",
+            slug: "active-search",
             data: {
               color: "#B987F2"
             }
           }
-          : categories.find(i => i.slug === categorySlug))
+          : categorySlug === "home"
+            ? {
+              slug: "home",
+              data: {
+                color: "#B987F2"
+              }
+            }
+            : categories.find(i => i.slug === categorySlug))
     }
   }, [router, categorySlugs, searchActive])
 
@@ -88,11 +96,12 @@ const HeaderContent = ({
 
   const onResize = (e) => {
     const newWidth = e && e[0].contentRect.width;
-    const activeCategoryElem = document.getElementsByClassName("active-category");
+    const activeCategoryElem = document.getElementsByClassName("active-category")?.[0];
     const categoryListElem = document.getElementById("categories");
+    const searchElem = document.getElementsByClassName("active-search")?.[0];
 
-    if (activeCategoryElem[0]) {
-      const position = activeCategoryElem[0].getBoundingClientRect()
+    if (activeCategoryElem || searchElem) {
+      const position = (searchElem || activeCategoryElem).getBoundingClientRect()
 
       const activeCategoryPointerElem = document.getElementById("active-category-pointer")
       if (activeCategoryPointerElem) {
@@ -127,6 +136,11 @@ const HeaderContent = ({
       }
     }
   }, [activeCategory])
+
+  const handleCategoryClick = (route) => {
+    setSearchActive(false)
+    router.push(route)
+  }
 
   return (
     <>
@@ -181,15 +195,14 @@ const HeaderContent = ({
             </span>
           </Link>
           {categories.map(i => (
-            <Link href={"/category/" + i.slug} key={i.slug}>
               <span
                 id={i.slug}
+                onClick={() => handleCategoryClick("/category/" + i.slug)}
                 className={activeCategory?.slug === i.slug ? "active-category" : ""}
                 style={{ color: i.data.color }}
               >
                 {i.data.name}
               </span>
-            </Link>
           ))}
           <SearchWrapper
             onChange={setSearch}

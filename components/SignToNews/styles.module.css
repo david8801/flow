@@ -71,3 +71,20 @@
   line-height: 24px;
   color: white;
 }
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
+  padding: 2px 16px;
+  background: #DB3741;
+  width: 100%;
+  text-align: start;
+  margin-top: 8px;
+}
