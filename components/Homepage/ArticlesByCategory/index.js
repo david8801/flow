@@ -24,9 +24,9 @@ const ArticlesByCategory = ({ posts, categories }) => {
   useEffect(() => {
     let final = posts.reduce((acc, val) => {
       const category = val.data.category;
-      if (acc[category]) {
+      if (acc[category]?.length < 4) {
         acc[category].push(val)
-      } else {
+      } else if (!acc[category]) {
         acc[category] = [val]
 
         if (!acc.tranding) {
@@ -60,7 +60,7 @@ const ArticlesByCategory = ({ posts, categories }) => {
               </span>
 
               {i[0] !== "tranding" && (
-                <button>
+                <button className={`${styles.desktop} ${styles.showMore}`}>
                   <ArrowRightIcon/> more
                 </button>
               )}
@@ -75,6 +75,12 @@ const ArticlesByCategory = ({ posts, categories }) => {
                 />
               ))}
             </div>
+
+            {i[0] !== "tranding" && (
+              <button className={`${styles.mobile} ${styles.showMore}`}>
+                <ArrowRightIcon/> more
+              </button>
+            )}
           </div>
         ))}
     </div>

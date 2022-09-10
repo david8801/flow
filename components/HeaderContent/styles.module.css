@@ -59,6 +59,7 @@
 .categoriesOverflow {
   overflow: hidden;
 }
+
 .categories {
   display: flex;
   justify-content: space-between;
@@ -96,4 +97,10 @@
 
 .categories svg {
   margin-right: 8px;
+}
+
+@media (max-width: 1000px) {
+  .headerContent .actions button {
+    width: 90px;
+  }
 }

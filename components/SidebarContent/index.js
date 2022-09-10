@@ -13,8 +13,6 @@ const SidebarContent = ({
                           toggleDarkMode,
                           search,
                           setSearch,
-                          searchResults,
-                          setSearchResults,
                           submitSearch,
                           searchActive,
                           setSearchActive,

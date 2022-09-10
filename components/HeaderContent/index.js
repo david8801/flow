@@ -15,8 +15,6 @@ const HeaderContent = ({
                          toggleSideNavigation,
                          search,
                          setSearch,
-                         searchResults,
-                         setSearchResults,
                          submitSearch,
                          searchActive,
                          setSearchActive,
@@ -118,10 +116,6 @@ const HeaderContent = ({
       }
     }
   }
-
-  // useEffect(() => {
-  //   onResize()
-  // }, [activeCategory])
 
   useEffect(() => {
     if (activeCategory) {

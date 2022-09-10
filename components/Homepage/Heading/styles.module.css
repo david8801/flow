@@ -37,3 +37,21 @@
 .articleList > div + div {
   border-top: 1px solid rgba(186, 186, 186, 0.3);
 }
+
+@media (max-width: 1100px) {
+  .head {
+    grid-template-columns: 1fr;
+    grid-gap: 194px;
+  }
+}
+
+@media (max-width: 600px) {
+  .head {
+    padding: 64px 0 24px;
+    margin: 0;
+  }
+
+  .mainArticleContent {
+    margin: 0;
+  }
+}

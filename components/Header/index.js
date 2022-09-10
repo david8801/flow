@@ -6,22 +6,31 @@ import HeaderContent from "../HeaderContent";
 import SidebarContent from "../SidebarContent";
 import SearchResults from "../SearchResults";
 import {debounce} from "lodash";
+import MobileHeader from "../MobileHeader";
 
 const Header = ({ categories, posts }) => {
   const [searchValue, setSearchValue] = useState("");
   const [searchActive, setSearchActive] = useState(false);
   const [searchResults, setSearchResults] = useState([])
+  const [width, setWidth] = useState(null)
   const sideNavigation = useSelector(getSideNavigationSelector);
   const theme = useSelector(getThemeSelector)
   const dispatch = useDispatch()
 
   useEffect(() => {
+    setWidth(window.innerWidth)
+    window.addEventListener("resize", onResize)
     document.addEventListener("keydown", escFunction, false);
 
     return () => {
       document.removeEventListener("keydown", escFunction, false);
+      window.removeEventListener("resize", onResize)
     };
   }, []);
+
+  const onResize = (e) => {
+    setWidth(e.target.innerWidth)
+  }
 
   const escFunction = (event) => {
     if (event.key === "Escape") {
@@ -68,41 +77,39 @@ const Header = ({ categories, posts }) => {
   }, [searchValue])
 
   return <>
-    {sideNavigation
-      ? (
-        <SidebarContent
-          sideNavigation={sideNavigation}
-          theme={theme}
-          toggleDarkMode={toggleDarkMode}
-          toggleSideNavigation={toggleSideNavigation}
-          search={searchValue}
-          setSearch={setSearchValue}
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
-          submitSearch={submitSearch}
-          searchActive={searchActive}
-          setSearchActive={setSearchActive}
-          categories={categories}
-          clearResults={clearResults}
-        />
-      )
-      : (
-        <HeaderContent
-          sideNavigation={sideNavigation}
-          theme={theme}
-          toggleDarkMode={toggleDarkMode}
-          toggleSideNavigation={toggleSideNavigation}
-          search={searchValue}
-          setSearch={setSearchValue}
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
-          submitSearch={submitSearch}
-          searchActive={searchActive}
-          setSearchActive={setSearchActive}
-          categories={categories}
-          clearResults={clearResults}
-        />
-      )}
+    {width <= 800
+      ? <MobileHeader/>
+      : sideNavigation
+        ? (
+          <SidebarContent
+            sideNavigation={sideNavigation}
+            theme={theme}
+            toggleDarkMode={toggleDarkMode}
+            toggleSideNavigation={toggleSideNavigation}
+            search={searchValue}
+            setSearch={setSearchValue}
+            submitSearch={submitSearch}
+            searchActive={searchActive}
+            setSearchActive={setSearchActive}
+            categories={categories}
+            clearResults={clearResults}
+          />
+        )
+        : (
+          <HeaderContent
+            sideNavigation={sideNavigation}
+            theme={theme}
+            toggleDarkMode={toggleDarkMode}
+            toggleSideNavigation={toggleSideNavigation}
+            search={searchValue}
+            setSearch={setSearchValue}
+            submitSearch={submitSearch}
+            searchActive={searchActive}
+            setSearchActive={setSearchActive}
+            categories={categories}
+            clearResults={clearResults}
+          />
+        )}
     {!!searchValue && !!searchResults.length && (
       <SearchResults posts={searchResults} searchValue={searchValue} onClose={closeSearch}/>
     )}

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./styles.module.css";
 import ArticleRow from "../../ArticleRow";
+import moment from "moment/moment";
 
 const Latest = ({ posts }) => {
-  const latestPosts = posts.slice(0, 12)
+  const [latestPosts, setLatestPosts] = useState([]);
+
+  useEffect(() => {
+    setLatestPosts(posts.sort((a, b) => moment(b.data.date).diff(a.data.date)).slice(0, 12))
+  }, [posts])
 
   return (
     <div className={styles.latestWrapper}>

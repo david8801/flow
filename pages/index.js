@@ -2,10 +2,7 @@ import Head from 'next/head'
 import getPosts from "./api/getPosts";
 import styles from "../styles/homepage.module.css"
 import getCategories from "./api/getCategories";
-import ArticleRow from "../components/ArticleRow";
-import Header from "../components/Header";
 import React from "react";
-import RenderContent from "../components/RenderContent";
 import Heading from "../components/Homepage/Heading";
 import Latest from "../components/Homepage/Latest";
 import ArticlesByCategory from "../components/Homepage/ArticlesByCategory";

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from "./styles.module.css"
 import {MailIcon} from "../../icons/shared";
 import {emailRegex} from "../../constants/regex";
+import * as keys from "../../helpers/keys";
 
 const SignToNews = ({ type }) => {
   const [email, setEmail] = useState("")
@@ -16,6 +17,7 @@ const SignToNews = ({ type }) => {
       return
     }
 
+    localStorage.setItem(keys.signToNews, "seen")
     setSuccess(true)
   }
 

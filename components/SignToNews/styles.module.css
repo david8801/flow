@@ -88,3 +88,22 @@
   text-align: start;
   margin-top: 8px;
 }
+
+@media (max-width: 600px) {
+  .formWrapper {
+    width: 100%;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .actions input {
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
