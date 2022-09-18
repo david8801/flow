@@ -45,10 +45,17 @@
   }
 }
 
+@media (max-width: 800px) {
+  .head {
+    margin: 0 -16px;
+    padding-top: 24px;
+  }
+}
+
 @media (max-width: 600px) {
   .head {
-    padding: 64px 0 24px;
-    margin: 0;
+    padding: 24px 16px;
+    margin: 0 -16px;
   }
 
   .mainArticleContent {

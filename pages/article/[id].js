@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useMemo, useState} from 'react';
 import Head from "next/head";
 import styles from "../../styles/article.module.css";
 import getPosts from "../api/getPosts";
@@ -10,13 +10,31 @@ import recommended from 'remark-preset-lint-recommended';
 import remarkHtml from 'remark-html';
 import moment from "moment";
 import {Discord, Facebook, Instagram, Telegram, Twitter} from "../../icons/header";
+import ArticleCard from "../../components/ArticleCard";
 
 const Article = ({ posts, post, category }) => {
   const { name, color } = category.data;
   const [content, setContent] = useState("")
   const sideNavigation = useSelector(getSideNavigationSelector)
   const runningTextShown = useSelector(getRunningTextShownSelector)
-  const runningTextHeight = runningTextShown ? 45 : 0
+  const runningTextHeight = runningTextShown ? 45 : 0;
+
+  const featuredPosts = useMemo(() => {
+    const mainPostTags = post.data.tags.map(i => i.name);
+
+    return posts.reduce((acc, cur) => {
+      let matchedTags = 0;
+      cur.data.tags?.forEach(i => {
+        if (mainPostTags.includes(i.name)) {
+          matchedTags++
+        }
+      })
+      cur.matchedTags = matchedTags
+
+      acc.push(cur)
+      return acc
+    }, []).sort((a, b) => b.matchedTags - a.matchedTags)
+  }, [post, posts])
 
   useEffect(() => {
     let initialOffsetTop = sideNavigation ? runningTextHeight : (195 + runningTextHeight);
@@ -58,9 +76,11 @@ const Article = ({ posts, post, category }) => {
     )
   }, [])
 
+  // TODO: !! COUNT BY MATCHING TAGS - SORT BY MATCHING TAGS AND SHOW RELATED TAGS
+  // TODO: !! ADD TRENDING NOW CHECKBOX TO CRM AND MAP THEM ON HOMEPAGE
+
   console.log("post", post)
   console.log("category", category)
-  const filteredPosts = posts.filter(i => i.data.category === category.data.name).slice(0, 3);
   console.log(content)
   return (
     <>
@@ -120,6 +140,18 @@ const Article = ({ posts, post, category }) => {
                 <span>{name}</span>
               ))}
             </div>
+          </div>
+        </div>
+        <div className={styles.relatedArticlesWrapper}>
+          <span>related articles</span>
+          <div className={styles.relatedArticles}>
+            {featuredPosts.slice(0, 3).map(i => (
+              <ArticleCard
+                data={i.data}
+                slug={i.slug}
+                showSubtitle
+              />
+            ))}
           </div>
         </div>
       </div>

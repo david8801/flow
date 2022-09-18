@@ -56,3 +56,30 @@
   top: 50%;
   transform: translate(-50%, 0%) rotate(-45deg);
 }
+
+.searchIcon {
+  z-index: 2;
+  position: relative;
+}
+
+.search {
+  color: #B987F2;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 100%;
+  transition: .3s;
+  height: 90px;
+  background: #0B0017;
+  border: none;
+  border-bottom: 4px solid rgba(185, 135, 242, 1);
+}
+
+.search.searchActive {
+  right: 0;
+  padding: 20px 72px 12px;
+}

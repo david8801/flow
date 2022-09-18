@@ -60,6 +60,10 @@
   white-space: nowrap;
 }
 
+.categoriesMobile {
+  display: none;
+}
+
 .media {
   display: flex;
   justify-content: center;
@@ -95,5 +99,40 @@
 
   :global(.state-manager:not(.menu-left)) .email {
     margin-bottom: 72px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .email {
+    font-size: 36px;
+  }
+
+  .categoriesMobile {
+    display: flex;
+    flex-direction: column;
+    margin: 52px 0 50px;
+  }
+
+  .categoriesMobile span {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 2px;
+  }
+
+  .categoriesMobile > span + span {
+    margin-top: 62px;
+  }
+
+  .categories {
+    display: none;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .email {
+    font-size: 28px;
   }
 }

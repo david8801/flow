@@ -5,6 +5,7 @@ import {Discord, Facebook, Instagram, Logo, SearchIcon, Telegram, Twitter} from 
 import Switch from "../ui/Switch";
 import Link from "next/link";
 import SearchWrapper from "../SearchWrapper";
+import CategoryList from "../CategoryList";
 
 const SidebarContent = ({
                           theme,
@@ -37,18 +38,7 @@ const SidebarContent = ({
       </div>
 
       <div className={styles.categories}>
-        <Link href={"/"}>
-          <span style={{ color: "#B987F2" }}>
-            home
-          </span>
-        </Link>
-        {categories.map((i, idx) => (
-          <Link href={"/category/" + i.slug} key={idx}>
-            <span style={{ color: i.data.color }}>
-              {i.data.name}
-            </span>
-          </Link>
-        ))}
+        <CategoryList categories={categories}/>
       </div>
       <div className={styles.social}>
         <Telegram width={16} height={16}/>

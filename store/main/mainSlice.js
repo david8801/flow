@@ -3,7 +3,7 @@ import {theme, sideNavigation} from "../../helpers/keys";
 
 const initialState = {
   theme: "light",
-  sideNavigation: false,
+  sideNavigation: true,
   runningTextShown: true
 }
 

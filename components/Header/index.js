@@ -48,6 +48,7 @@ const Header = ({ categories, posts }) => {
 
   const closeSearch = () => {
     setSearchValue("")
+    setSearchActive(false)
     clearResults()
   }
 
@@ -76,40 +77,29 @@ const Header = ({ categories, posts }) => {
     searchDebounce()
   }, [searchValue])
 
+  console.log(width)
+
+  const innerProps = {
+    sideNavigation,
+    theme,
+    toggleDarkMode,
+    toggleSideNavigation,
+    search: searchValue,
+    setSearch: setSearchValue,
+    submitSearch,
+    searchActive,
+    setSearchActive,
+    categories,
+    clearResults,
+    closeSearch
+  }
   return <>
     {width <= 800
-      ? <MobileHeader/>
+      ? <MobileHeader {...innerProps}/>
       : sideNavigation
-        ? (
-          <SidebarContent
-            sideNavigation={sideNavigation}
-            theme={theme}
-            toggleDarkMode={toggleDarkMode}
-            toggleSideNavigation={toggleSideNavigation}
-            search={searchValue}
-            setSearch={setSearchValue}
-            submitSearch={submitSearch}
-            searchActive={searchActive}
-            setSearchActive={setSearchActive}
-            categories={categories}
-            clearResults={clearResults}
-          />
-        )
-        : (
-          <HeaderContent
-            sideNavigation={sideNavigation}
-            theme={theme}
-            toggleDarkMode={toggleDarkMode}
-            toggleSideNavigation={toggleSideNavigation}
-            search={searchValue}
-            setSearch={setSearchValue}
-            submitSearch={submitSearch}
-            searchActive={searchActive}
-            setSearchActive={setSearchActive}
-            categories={categories}
-            clearResults={clearResults}
-          />
-        )}
+        ? <SidebarContent {...innerProps}/>
+        : <HeaderContent {...innerProps}/>
+    }
     {!!searchValue && !!searchResults.length && (
       <SearchResults posts={searchResults} searchValue={searchValue} onClose={closeSearch}/>
     )}

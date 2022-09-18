@@ -70,6 +70,7 @@
   --search-box-right: 81px;
   --search-box-left: unset;
   --search-box-position: absolute;
+  --article-distance-top: -40px;
 }
 
 .state-manager:not(.menu-left).running-text-shown {
@@ -87,11 +88,29 @@
   --search-box-right: unset;
   --search-box-left: 168px;
   --search-box-position: fixed;
+  --article-distance-top: 0
 }
 
 .state-manager.menu-left.running-text-shown {
   --sticky-distance: 45px;
   --sticky-distance-no-categories: 45px;
+  --article-distance-top: -18px;
+}
+
+.state-manager {
+  --mobile-search-box-top: 90px;
+  --mobile-sidebar-top: 90px;
+}
+
+.state-manager.running-text-shown {
+  --mobile-search-box-top: 135px;
+  --mobile-sidebar-top: 135px;
+}
+
+@media (max-width: 800px) {
+  .state-manager {
+    --distance-top: 90px !important;
+  }
 }
 
 html,
@@ -232,5 +251,9 @@ span, button, h1, h2, h3, h4, h5, li, p, input {
 
   .state-manager.running-text-shown {
     padding-top: 45px;
+  }
+
+  .page-content {
+    padding-top: var(--distance-top);
   }
 }

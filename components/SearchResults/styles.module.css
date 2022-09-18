@@ -3,7 +3,7 @@
   left: var(--search-box-left);
   right: var(--search-box-right);
   top: var(--search-box-top);
-  z-index: 230;
+  z-index: 1001;
   width: 375px;
   background-color: white;
   display: flex;
@@ -48,4 +48,21 @@
 
 .viewResults:hover svg {
   transform: translateX(8px);
+}
+
+@media (max-width: 800px) {
+  .searchResults {
+    position: fixed;
+    top: var(--mobile-search-box-top);
+    left: 16px;
+    right: unset;
+  }
+}
+
+@media (max-width: 500px) {
+  .searchResults {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
 }
