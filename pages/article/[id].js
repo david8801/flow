@@ -20,7 +20,7 @@ const Article = ({ posts, post, category }) => {
   const runningTextHeight = runningTextShown ? 45 : 0;
 
   const featuredPosts = useMemo(() => {
-    const mainPostTags = post.data.tags.map(i => i.name);
+    const mainPostTags = post.data.tags?.map(i => i.name);
 
     return posts.reduce((acc, cur) => {
       let matchedTags = 0;
@@ -145,7 +145,7 @@ const Article = ({ posts, post, category }) => {
         <div className={styles.relatedArticlesWrapper}>
           <span>related articles</span>
           <div className={styles.relatedArticles}>
-            {featuredPosts.slice(0, 3).map(i => (
+            {featuredPosts.slice(0, 3)?.map(i => (
               <ArticleCard
                 data={i.data}
                 slug={i.slug}
