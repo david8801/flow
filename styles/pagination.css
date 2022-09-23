@@ -71,6 +71,7 @@
   opacity: .6;
   cursor: default;
 }
+
 .pagination-item.disabled {
   pointer-events: none;
   opacity: .4;
@@ -79,4 +80,27 @@
 .pagination-item.disabled:hover {
   background-color: transparent;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .pagination-container {
+    grid-template-columns: unset;
+    grid-template-rows: repeat(3, max-content);
+    text-align: center;
+    grid-gap: 32px;
+  }
+
+  .pagination-container .show-more {
+    grid-row: 1;
+    margin: 0 auto;
+  }
+
+  .pagination-container .pages {
+    margin: 0 auto;
+  }
+
+  .pagination-container .pagination-actions {
+    justify-content: space-between;
+    width: 100%;
+  }
 }

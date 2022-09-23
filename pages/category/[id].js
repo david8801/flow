@@ -18,6 +18,7 @@ const Category = ({ posts, category, tags }) => {
   const [page, setPage] = useState(1);
   const [activeTags, setActiveTags] = useState([]);
   const [offset, setOffset] = useState(0)
+  const [width, setWidth] = useState(null)
   const runningTextHeight = runningTextShown ? 45 : 0
 
   useEffect(() => {
@@ -28,15 +29,20 @@ const Category = ({ posts, category, tags }) => {
       onScroll(initialOffsetTop)
     }
 
-    window.removeEventListener("scroll", scrollListener)
+    setWidth(window.innerWidth)
+    window.addEventListener("resize", onResize)
 
     window.addEventListener("scroll", scrollListener)
 
     return () => {
+      window.removeEventListener("resize", onResize)
       window.removeEventListener("scroll", scrollListener)
     }
   }, [sideNavigation])
 
+  const onResize = (e) => {
+    setWidth(e.target.innerWidth)
+  }
 
   const onScroll = (initialOffsetTop) => {
     const categoryHeader = document.getElementById("category-header"),
@@ -104,7 +110,7 @@ const Category = ({ posts, category, tags }) => {
                   <ArticleCard
                     slug={i.slug}
                     data={i.data}
-                    horizontal
+                    horizontal={width > 650}
                     showSubtitle
                   />
                   {idx === 1 && (

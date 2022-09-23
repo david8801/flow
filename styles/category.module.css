@@ -102,3 +102,47 @@
 .categoryPosts > * + * {
   margin-top: 28px;
 }
+
+@media (max-width: 1100px) {
+  :global(.state-manager.menu-left) .category,
+  :global(.state-manager.menu-left) .categoryTop {
+    max-width: unset;
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 1000px) {
+  :global(.state-manager:not(.menu-left)) .category,
+  :global(.state-manager:not(.menu-left)) .categoryTop {
+    max-width: unset;
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 800px) {
+  .categoryTopWrapper {
+    top: var(--mobile-sidebar-top)
+  }
+
+  .categoryTop {
+    padding: 0 16px !important;
+  }
+
+  .category {
+    padding: 48px 16px 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .categoryTop {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryTop .sortWrapper {
+    grid-row: 1;
+  }
+
+  .categoryTop > span {
+    margin: 16px 0 12px;
+  }
+}

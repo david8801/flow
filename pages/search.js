@@ -16,6 +16,7 @@ const Search = ({ posts }) => {
   const [sort, setSort] = useState("recent");
   const [page, setPage] = useState(1);
   const [offset, setOffset] = useState(0);
+  const [width, setWidth] = useState(null)
   const router = useRouter();
   const searchValue = router.query.value;
   const runningTextHeight = runningTextShown ? 45 : 0
@@ -28,15 +29,20 @@ const Search = ({ posts }) => {
       onScroll(initialOffsetTop)
     }
 
-    window.removeEventListener("scroll", scrollListener)
+    setWidth(window.innerWidth)
+    window.addEventListener("resize", onResize)
 
     window.addEventListener("scroll", scrollListener)
 
     return () => {
+      window.removeEventListener("resize", onResize)
       window.removeEventListener("scroll", scrollListener)
     }
   }, [sideNavigation])
 
+  const onResize = (e) => {
+    setWidth(e.target.innerWidth)
+  }
 
   const onScroll = (initialOffsetTop) => {
     const categoryHeader = document.getElementById("category-header"),
@@ -86,7 +92,7 @@ const Search = ({ posts }) => {
                   <ArticleCard
                     slug={i.slug}
                     data={i.data}
-                    horizontal
+                    horizontal={width > 650}
                     showSubtitle
                   />
                   {idx === 1 && (
