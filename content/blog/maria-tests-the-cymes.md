@@ -5,6 +5,7 @@ subtitle: I am testing
 category: design
 date: 2022-09-08T12:26:44.083Z
 sponsored: false
+trending: true
 author: Maria Donchenko
 tags:
   - name: teambuilding
