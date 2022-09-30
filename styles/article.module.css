@@ -112,11 +112,17 @@
   text-decoration: underline;
 }
 
+.article li,
 .article p {
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   opacity: .8;
+}
+
+.article ul > li + li,
+.article ol > li + li {
+  margin-top: 8px;
 }
 
 .article img {

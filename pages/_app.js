@@ -24,7 +24,7 @@ MyApp.getInitialProps = async () => {
   const categories = await getCategories()
 
   posts = posts.map(i => {
-    const category = categories.find(j => i.data.category === j.data.name)
+    const category = categories?.find(j => i.data.category === j.data.name)
     return {
       ...i,
       category_slug: category.slug,
