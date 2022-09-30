@@ -7,6 +7,7 @@ subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus mi duis
 category: tech
 date: 2022-08-12T13:15:46.633Z
 sponsored: false
+trending: true
 author: David
 tags:
   - name: long
