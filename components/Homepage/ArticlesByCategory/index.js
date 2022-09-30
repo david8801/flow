@@ -13,8 +13,8 @@ const ArticlesByCategory = ({ posts, categories }) => {
       console.log("val", val)
       acc[val.slug] = val.data.order
 
-      if (!acc.tranding) {
-        acc.tranding = -100
+      if (!acc.trending) {
+        acc.trending = -100
       }
 
       return acc
@@ -24,16 +24,19 @@ const ArticlesByCategory = ({ posts, categories }) => {
   useEffect(() => {
     let final = posts.reduce((acc, val) => {
       const category = val.data.category;
+
+      if (val.data.trending) {
+        if (!acc.trending) {
+          acc.trending = [val]
+        } else if (acc.trending.length < 4) {
+          acc.trending.push(val)
+        }
+      }
+
       if (acc[category]?.length < 4) {
         acc[category].push(val)
       } else if (!acc[category]) {
         acc[category] = [val]
-
-        if (!acc.tranding) {
-          acc.tranding = [val]
-        } else if (acc.tranding.length < 4) {
-          acc.tranding.push(val)
-        }
       }
       return acc
     }, {})
@@ -51,15 +54,15 @@ const ArticlesByCategory = ({ posts, categories }) => {
             <div className={styles.dividedSectionHead}>
               <span
                 className="section-title"
-                {...(i[0] !== "tranding" && {
+                {...(i[0] !== "trending" && {
                   style: { color: i[1][0].data.category_color, cursor: "pointer" },
                   onClick: () => router.push("/category/" + i[1][0].category_slug)
                 })}
               >
-                {i[0] !== "tranding" ? "." : ""}{i[0]}
+                {i[0] !== "trending" ? "." : ""}{i[0]}{i[0] === "trending" ? " now" : ""}
               </span>
 
-              {i[0] !== "tranding" && (
+              {i[0] !== "trending" && (
                 <button className={`${styles.desktop} ${styles.showMore}`}>
                   <ArrowRightIcon/> more
                 </button>
@@ -76,7 +79,7 @@ const ArticlesByCategory = ({ posts, categories }) => {
               ))}
             </div>
 
-            {i[0] !== "tranding" && (
+            {i[0] !== "trending" && (
               <button className={`${styles.mobile} ${styles.showMore}`}>
                 <ArrowRightIcon/> more
               </button>
