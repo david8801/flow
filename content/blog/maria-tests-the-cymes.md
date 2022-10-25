@@ -12,6 +12,12 @@ tags:
 ---
 # З ким роботу робити?
 
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">💻🎨Want to make the first step into <a href="https://twitter.com/hashtag/WebDesign?src=hash&amp;ref_src=twsrc%5Etfw">#WebDesign</a>? Check out the new blog post from the <a href="https://twitter.com/hashtag/Movadex?src=hash&amp;ref_src=twsrc%5Etfw">#Movadex</a> team and change your career path with a solid knowledge base. Maybe you are a future Movadex team member 😉<a href="https://t.co/pQwm0PJ2f7">https://t.co/pQwm0PJ2f7</a><a href="https://twitter.com/hashtag/productdesign?src=hash&amp;ref_src=twsrc%5Etfw">#productdesign</a> <a href="https://twitter.com/hashtag/uxui?src=hash&amp;ref_src=twsrc%5Etfw">#uxui</a> <a href="https://twitter.com/hashtag/courses?src=hash&amp;ref_src=twsrc%5Etfw">#courses</a></p>&mdash; Movadex (@movadex) <a href="https://twitter.com/movadex/status/1584460767843471361?ref_src=twsrc%5Etfw">October 24, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
 З ким роботу робити?
 
 *Під роботою я маю на увазі будь-який процес, який вам треба зробити з іншою людиною. Також всі вказані нижче пункти стосуються і себе самого)*
