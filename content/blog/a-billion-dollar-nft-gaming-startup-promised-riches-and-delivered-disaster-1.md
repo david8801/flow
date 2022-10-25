@@ -19,8 +19,6 @@ tags:
 
 ### h3
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We went digging through the archives and found the ancient Pyre alphabet. What could they mean?<a href="https://t.co/6mhMa58fUy">https://t.co/6mhMa58fUy</a> <a href="https://t.co/TKqLMi5XSz">pic.twitter.com/TKqLMi5XSz</a></p>&mdash; Paladins: The Game (@PaladinsGame) <a href="https://twitter.com/PaladinsGame/status/1584575476202278912?ref_src=twsrc%5Etfw">October 24, 2022</a></blockquote>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DUtg5DWu21Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Despite a major decline in trading volume across the broader nonfungible token (NFT) market, a single CryptoPunk has sold for a whopping 2,500 Ether (ETH) which equates to a price tag of just over $2.6 million.\
