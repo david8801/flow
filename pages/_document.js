@@ -17,6 +17,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           {/*<link href="/fonts/SpartanMB/style.css" rel="stylesheet"/>*/}
         </Head>
         <body>

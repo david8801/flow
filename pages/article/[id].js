@@ -70,7 +70,7 @@ const Article = ({ posts, post, category }) => {
     setContent(
       remark()
         .use(recommended)
-        .use(remarkHtml)
+        .use(remarkHtml, {sanitize: false})
         .processSync(post.content).toString()
         .replaceAll?.('src="img', 'src="' + process.env.NEXT_PUBLIC_WEBSITE_URL + "/img")
     )
@@ -79,6 +79,7 @@ const Article = ({ posts, post, category }) => {
   // TODO: !! COUNT BY MATCHING TAGS - SORT BY MATCHING TAGS AND SHOW RELATED TAGS
   // TODO: !! ADD TRENDING NOW CHECKBOX TO CRM AND MAP THEM ON HOMEPAGE
 
+  console.log("posts",posts)
   console.log("post", post)
   console.log("category", category)
   console.log(content)
