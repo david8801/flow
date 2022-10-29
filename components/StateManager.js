@@ -6,13 +6,13 @@ import {getRunningTextShownSelector, getSideNavigationSelector, getThemeSelector
 import Marquee from "react-fast-marquee";
 import SignToNews from "./SignToNews";
 
-const StateManager = ({ children }) => {
+const StateManager = ({ children, runningLineSettings = {} }) => {
   const dispatch = useDispatch()
   const theme = useSelector(getThemeSelector)
   const sideNavigation = useSelector(getSideNavigationSelector)
-  const showRunningText = useSelector(getRunningTextShownSelector)
   const [subscribePopup, setSubscribePopup] = useState(false);
 
+  console.log("runningLineSettings",runningLineSettings)
   useEffect(() => {
     const storageSignToNewsShown = localStorage.getItem(keys.signToNews)
     const storageTheme = localStorage.getItem(keys.theme)
@@ -43,15 +43,16 @@ const StateManager = ({ children }) => {
     setSubscribePopup(false)
   }
 
+  const runningTextClick = () => runningLineSettings.link && window.open(runningLineSettings.link)
+
   return (
     <div
       id={"state-manager"}
-      className={`state-manager ${theme}-theme ${sideNavigation ? "menu-left" : "menu-top"} ${showRunningText ? "running-text-shown" : ""}`}>
-      {showRunningText && (
-        <div className={"running-text-wrapper"}>
+      className={`state-manager ${theme}-theme ${sideNavigation ? "menu-left" : "menu-top"} ${runningLineSettings.active ? "running-text-shown" : ""}`}>
+      {runningLineSettings.active && (
+        <div onClick={runningTextClick} className={"running-text-wrapper"}>
           <Marquee speed={40} gradient={false}>
-            Read new post 🔥🔥🔥 a Billion-Dollar NFT Gaming Startup Promised Riches and Delivered Disaster 🔥🔥🔥 Read new
-            post 🔥🔥🔥 a Billion-Dollar NFT Gaming Startup Promised Riches and Delivered Disaster
+            {runningLineSettings.text}
           </Marquee>
         </div>
       )}

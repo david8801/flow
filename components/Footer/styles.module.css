@@ -105,7 +105,7 @@
 
 @media (max-width: 500px) {
   .email {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .categoriesMobile {
@@ -134,6 +134,6 @@
 
 @media (max-width: 380px) {
   .email {
-    font-size: 28px;
+    font-size: 24px;
   }
 }

@@ -107,6 +107,9 @@
   right: 0;
 }
 
+.article iframe {
+  width: 100%;
+}
 .article a {
   font-weight: bold;
   text-decoration: underline;
@@ -133,12 +136,15 @@
   position: relative;
   max-width: 840px;
   margin: 38px auto 54px;
+  display: grid;
+  grid-template-columns: 21px 1fr;
 }
 
 .media {
-  left: -78px;
-  top: 0;
-  position: absolute;
+  margin-left: -78px;
+  top: 350px;
+  height: max-content;
+  position: sticky;
   display: flex;
   flex-direction: column;
 }
@@ -154,6 +160,7 @@
 .articleFooter {
   background: rgba(186, 186, 186, 0.1);
   padding: 32px 24px;
+  grid-column: 2;
 }
 
 .share {
@@ -292,12 +299,20 @@
   }
 
   .relatedArticlesWrapper,
-  .articleWrapper {
+  .article {
     padding: 0 16px !important;
+  }
+
+  .articleFooter {
+    margin: 0 16px;
   }
 
   .relatedArticlesWrapper {
     padding-bottom: 46px !important;
+  }
+
+  .articleWrapper {
+    display: unset;
   }
 
   .media {

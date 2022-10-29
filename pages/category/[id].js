@@ -11,6 +11,7 @@ import moment from "moment";
 import Pagination from "../../components/Pagination";
 
 const Category = ({ posts, category, tags }) => {
+  console.log(category)
   const { name, color } = category.data;
   const sideNavigation = useSelector(getSideNavigationSelector)
   const runningTextShown = useSelector(getRunningTextShownSelector)

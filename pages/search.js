@@ -60,7 +60,7 @@ const Search = ({ posts }) => {
     setSort(sort === "recent" ? "the oldest" : "recent")
   }
 
-  const filteredPosts = posts.filter(i => i.data.title.includes(searchValue));
+  const filteredPosts = posts.filter(i => i.data.title.toLowerCase().includes(searchValue.toLowerCase()));
   return (
     <>
       <Head>

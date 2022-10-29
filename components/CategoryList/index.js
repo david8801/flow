@@ -3,13 +3,14 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 import styles from "./styles.module.css"
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ categories, onClick }) => {
   const router = useRouter();
   console.log(router)
   return <>
     <Link href={"/"}>
           <span
             className={styles.category}
+            onClick={onClick}
             style={{
               color: "#B987F2",
               borderBottom: router.pathname === "/" ? "1px solid #B987F2" : ""
@@ -21,6 +22,7 @@ const CategoryList = ({ categories }) => {
     {categories.map((i, idx) => (
       <Link href={"/category/" + i.slug} key={idx}>
             <span
+              onClick={onClick}
               style={{
                 color: i.data.color,
                 borderBottom: router.query.id === i.slug ? "1px solid " + i.data.color : ""

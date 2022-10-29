@@ -63,6 +63,7 @@ const MobileHeader = ({
         theme={theme}
         toggleDarkMode={toggleDarkMode}
         categories={categories}
+        triggerMenu={triggerMenu}
       />
     </>
   );

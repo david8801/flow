@@ -4,12 +4,12 @@ import CategoryList from "../CategoryList";
 import Switch from "../ui/Switch";
 import {Discord, Facebook, Instagram, Telegram, Twitter} from "../../icons/header";
 
-const MobileSidebar = ({ active, theme, toggleDarkMode, categories }) => {
+const MobileSidebar = ({ active, theme, toggleDarkMode, categories, triggerMenu }) => {
   return (
     <div className={`${styles.mobileSidebar} ${active ? styles.active : ""}`}>
       <div className={styles.mobileSidebarContent}>
         <div className={styles.categories}>
-          <CategoryList categories={categories}/>
+          <CategoryList onClick={triggerMenu} categories={categories}/>
         </div>
         <Switch
           size={"medium"}

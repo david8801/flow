@@ -27,7 +27,10 @@ const SignToNews = ({ type }) => {
   }
 
   return (
-    <div className={`${styles.signToNewsWrapper} ${type ? styles[type] : ""}`}>
+    <div
+      id={type ? "" : "subscribe"}
+      className={`${styles.signToNewsWrapper} ${type ? styles[type] : ""}`}
+    >
       {success
         ? <>
           <span className={styles.title}>Thank you! 🙂</span>

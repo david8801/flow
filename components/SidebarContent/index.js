@@ -18,7 +18,8 @@ const SidebarContent = ({
                           searchActive,
                           setSearchActive,
                           categories,
-                          clearResults
+                          clearResults,
+                          handleSubscribe
                         }) => {
   return (
     <div className={`${headerStyles.header} ${styles.sidebar}`}>
@@ -58,7 +59,7 @@ const SidebarContent = ({
           label={"dark mode"}
         />
       </div>
-      <button className={styles.subscribe}>
+      <button onClick={handleSubscribe} className={styles.subscribe}>
         Subscribe
       </button>
     </div>

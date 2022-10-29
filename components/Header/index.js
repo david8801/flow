@@ -65,17 +65,20 @@ const Header = ({ categories, posts }) => {
     }
 
     setSearchValue(searchValue => {
-      console.log("terasdf", posts.filter(i => i.data.title.includes(searchValue)))
-      setSearchResults([...posts.filter(i => i.data.title.includes(searchValue))])
+      setSearchResults([...posts.filter(i => i.data.title.toLowerCase().includes(searchValue.toLowerCase()))])
       return searchValue
     })
     // setSearchActive(false)
   }
-  const searchDebounce = useMemo(() => debounce(submitSearch, 500), [])
+  const searchDebounce = useMemo(() => debounce(submitSearch, 300), [])
 
   useEffect(() => {
     searchDebounce()
   }, [searchValue])
+
+  const handleSubscribe = () => {
+    document.getElementById("subscribe")?.scrollIntoView({behavior: "smooth"})
+  }
 
   console.log(width)
 
@@ -91,7 +94,8 @@ const Header = ({ categories, posts }) => {
     setSearchActive,
     categories,
     clearResults,
-    closeSearch
+    closeSearch,
+    handleSubscribe
   }
   return <>
     {width <= 800

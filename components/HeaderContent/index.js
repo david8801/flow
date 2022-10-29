@@ -19,7 +19,8 @@ const HeaderContent = ({
                          searchActive,
                          setSearchActive,
                          categories,
-                         clearResults
+                         clearResults,
+                         handleSubscribe
                        }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const lastWidth = useRef();
@@ -97,12 +98,14 @@ const HeaderContent = ({
     const activeCategoryElem = document.getElementsByClassName("active-category")?.[0];
     const categoryListElem = document.getElementById("categories");
     const searchElem = document.getElementsByClassName("active-search")?.[0];
+    const activeCategoryPointerElem = document.getElementById("active-category-pointer")
 
     if (activeCategoryElem || searchElem) {
       const position = (searchElem || activeCategoryElem).getBoundingClientRect()
 
-      const activeCategoryPointerElem = document.getElementById("active-category-pointer")
       if (activeCategoryPointerElem) {
+        document.getElementById("categories").scrollLeft = 10000
+
         if (e && lastWidth.current !== newWidth) {
           activeCategoryPointerElem.style.transition = "none"
         } else {
@@ -113,6 +116,10 @@ const HeaderContent = ({
         if (e) {
           lastWidth.current = newWidth
         }
+      }
+    } else {
+      if (activeCategoryPointerElem) {
+        activeCategoryPointerElem.style.width = '0px'
       }
     }
   }
@@ -162,7 +169,7 @@ const HeaderContent = ({
                 label={"dark mode"}
               />
             </div>
-            <button>
+            <button onClick={handleSubscribe}>
               click to not loose our news
             </button>
           </div>
@@ -189,12 +196,12 @@ const HeaderContent = ({
             </span>
           </Link>
           {categories.map(i => (
-              <span
-                id={i.slug}
-                onClick={() => handleCategoryClick("/category/" + i.slug)}
-                className={activeCategory?.slug === i.slug ? "active-category" : ""}
-                style={{ color: i.data.color }}
-              >
+            <span
+              id={i.slug}
+              onClick={() => handleCategoryClick("/category/" + i.slug)}
+              className={activeCategory?.slug === i.slug ? "active-category" : ""}
+              style={{ color: i.data.color }}
+            >
                 {i.data.name}
               </span>
           ))}

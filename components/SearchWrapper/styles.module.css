@@ -8,40 +8,32 @@
   align-items: center;
   color: #B987F2;
   width: 104px;
-  transition: .3s width;
+  transition: .3s;
   overflow: hidden;
-  transition-delay: .3s;
 }
 
 .sidebarSearch .searchHandler {
-  transition: 0s;
-  transition-delay: 0s;
 }
 
 .searchHandlerInactive {
-  transition-delay: 0s;
   width: 0;
 }
 
 .searchForm {
   width: 0;
   overflow: hidden;
-  transition: .3s width;
-  transition-delay: 0s;
+  transition: .3s;
 }
 
 .searchFormActive {
   width: 350px;
-  transition-delay: .3s;
 }
 
 .sidebarSearch .searchForm {
-  transition: 0s;
 }
 
 .sidebarSearch .searchFormActive {
   width: 136px;
-  transition-delay: 0s;
 }
 
 .searchFormActive input {

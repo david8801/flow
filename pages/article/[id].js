@@ -106,10 +106,6 @@ const Article = ({ posts, post, category }) => {
           </div>
         </div>
         <div className={styles.articleWrapper}>
-          <div
-            dangerouslySetInnerHTML={{ __html: content }}
-            className={styles.article}
-          />
           <div className={styles.media}>
             <Telegram/>
             <Facebook/>
@@ -117,6 +113,10 @@ const Article = ({ posts, post, category }) => {
             <Discord/>
             <Instagram/>
           </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className={styles.article}
+          />
           <div className={styles.articleFooter}>
             <div className={styles.share}>
               <span>Share</span>

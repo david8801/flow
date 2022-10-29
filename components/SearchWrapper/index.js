@@ -11,11 +11,6 @@ const SearchWrapper = ({ submitSearch, active, setActive, onChange, value, sideb
   useEffect(() => {
     if (active) {
       document.getElementById("search-input").focus()
-      if (!sidebar) {
-        setTimeout(() => {
-          document.getElementById("categories").scrollLeft = 10000
-        }, 600)
-      }
     }
   }, [active, sidebar])
 

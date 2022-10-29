@@ -15,14 +15,17 @@ const SearchResults = ({ posts, searchValue, onClose }) => {
     <div className={styles.searchResults}>
       {posts
         .slice(0, 3)
-        .map((i, idx) => (
-          <ArticleRow
-            key={idx}
-            slug={i.slug}
-            data={i.data}
-            titleRender={title => <span dangerouslySetInnerHTML={{__html: title.replaceAll(searchValue, `<b>${searchValue}</b>`)}}></span>}
-          />
-        ))}
+        .map((i, idx) => {
+          var reg = new RegExp('('+searchValue+')', 'gi');
+          return (
+            <ArticleRow
+              key={idx}
+              slug={i.slug}
+              data={i.data}
+              titleRender={title => <span dangerouslySetInnerHTML={{__html: title.replaceAll(reg, `<b>${searchValue}</b>`)}}></span>}
+            />
+          )
+        })}
       <button onClick={viewResults} className={styles.viewResults}>
         <ArrowRightIcon/> view results
       </button>

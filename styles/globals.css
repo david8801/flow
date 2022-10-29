@@ -191,6 +191,7 @@ span, button, h1, h2, h3, h4, h5, li, p, input {
   line-height: 24px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .menu-left .running-text-wrapper {

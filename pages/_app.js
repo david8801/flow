@@ -9,12 +9,12 @@ import getPosts from "./api/getPosts";
 import getRunningLineSettings from "./api/getRunningLineSettings";
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, props }) {
   console.log("pageProps", pageProps)
   return (
     <Provider store={store}>
-      <StateManager>
-        <RenderContent categories={pageProps.categories} posts={pageProps.posts}>
+      <StateManager runningLineSettings={props.runningLineSettings}>
+        <RenderContent categories={props.categories} posts={props.posts}>
           <Component {...pageProps} />
         </RenderContent>
       </StateManager>
