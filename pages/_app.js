@@ -6,9 +6,11 @@ import StateManager from "../components/StateManager";
 import RenderContent from "../components/RenderContent";
 import getCategories from "./api/getCategories";
 import getPosts from "./api/getPosts";
+import getRunningLineSettings from "./api/getRunningLineSettings";
 
 
 function MyApp({ Component, pageProps }) {
+  console.log("pageProps", pageProps)
   return (
     <Provider store={store}>
       <StateManager>
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }) {
 MyApp.getInitialProps = async () => {
   let posts = await getPosts()
   const categories = await getCategories()
+  const runningLineSettings = await getRunningLineSettings()
 
   posts = posts.map(i => {
     const category = categories?.find(j => i.data.category === j.data.name)
@@ -33,7 +36,7 @@ MyApp.getInitialProps = async () => {
   })
 
   return {
-    props: { posts, categories }
+    props: { posts, categories, runningLineSettings }
   }
 }
 

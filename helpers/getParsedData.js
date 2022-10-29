@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
+const yaml = require('js-yaml');
 
 const getAll = dir => {
     // Read files at _posts/{directory}
@@ -21,6 +22,16 @@ const getAll = dir => {
     return JSON.stringify(content);
 };
 
+const getFile = (dir) => {
+  const inputYML = `./content/${dir}.yml`;
+  const outputJSON = `./public/parsed/${dir}.json`;
+  const obj = yaml.load(fs.readFileSync(inputYML, {encoding: 'utf-8'}));
+
+//this code if you want to save file locally
+  fs.writeFileSync(outputJSON, JSON.stringify(obj, null, 2));
+
+}
+
 const allPosts = getAll("blog");
 const allCategories = getAll("categories");
 
@@ -33,6 +44,8 @@ try {
 } catch (e) {
     fs.mkdirSync("./public/parsed");
 }
+
+getFile("running_line")
 
 // Create our cached posts JSON
 fs.writeFile("./public/parsed/posts.json", postFileContents, err => {
