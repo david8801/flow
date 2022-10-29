@@ -14,9 +14,9 @@ const Footer = ({ categories }) => {
           <Logo height={71}/>
         </Link>
 
-        <a className={styles.email} href="mailto:hello@flow.com">
+        <a className={styles.email} href="mailto:hello@thecymes.com">
           <ArrowRightIcon height={45} width={45}/>
-          hello@flow.com
+          hello@thecymes.com
         </a>
       </div>
       <div className={styles.categories}>

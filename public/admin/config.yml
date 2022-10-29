@@ -65,3 +65,14 @@ collections:
     identifier_field: "name"
     fields:
       - {label: "Name", name: "name", widget: "string"}
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Running Line"
+        name: "running_line"
+        file: "content/running_line.yml"
+        fields:
+          - {label: "Text", name: "text", widget: "Text"}
+          - {label: "Link", name: "link", widget: "String"}
+          - {label: "Active", name: "active", widget: "Boolean"}

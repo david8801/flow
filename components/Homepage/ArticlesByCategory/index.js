@@ -49,43 +49,46 @@ const ArticlesByCategory = ({ posts, categories }) => {
     <div className={styles.articlesByCategoryWrapper}>
       {Object.entries(articlesDivided)
         .sort((a, b) => orderByCategory[a[0]] - orderByCategory[b[0]])
-        .map((i, idx) => (
-          <div key={idx} className={styles.dividedSection}>
-            <div className={styles.dividedSectionHead}>
+        .map((i, idx) => {
+          const redirect = () => router.push("/category/" + i[1][0].category_slug)
+          return (
+            <div key={idx} className={styles.dividedSection}>
+              <div className={styles.dividedSectionHead}>
               <span
                 className="section-title"
                 {...(i[0] !== "trending" && {
                   style: { color: i[1][0].data.category_color, cursor: "pointer" },
-                  onClick: () => router.push("/category/" + i[1][0].category_slug)
+                  onClick: redirect
                 })}
               >
                 {i[0] !== "trending" ? "." : ""}{i[0]}{i[0] === "trending" ? " now" : ""}
               </span>
 
+                {i[0] !== "trending" && (
+                  <button onClick={redirect} className={`${styles.desktop} ${styles.showMore}`}>
+                    <ArrowRightIcon/> more
+                  </button>
+                )}
+              </div>
+              <div className={styles.dividedSectionArticles}>
+                {i[1].map((i, idx) => (
+                  <ArticleCard
+                    slug={i.slug}
+                    key={idx}
+                    data={i.data}
+                    showSubtitle={!i.data.sponsored}
+                  />
+                ))}
+              </div>
+
               {i[0] !== "trending" && (
-                <button className={`${styles.desktop} ${styles.showMore}`}>
+                <button onClick={redirect} className={`${styles.mobile} ${styles.showMore}`}>
                   <ArrowRightIcon/> more
                 </button>
               )}
             </div>
-            <div className={styles.dividedSectionArticles}>
-              {i[1].map((i, idx) => (
-                <ArticleCard
-                  slug={i.slug}
-                  key={idx}
-                  data={i.data}
-                  showSubtitle={!i.data.sponsored}
-                />
-              ))}
-            </div>
-
-            {i[0] !== "trending" && (
-              <button className={`${styles.mobile} ${styles.showMore}`}>
-                <ArrowRightIcon/> more
-              </button>
-            )}
-          </div>
-        ))}
+          )
+        })}
     </div>
   );
 };
