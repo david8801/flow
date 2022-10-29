@@ -73,6 +73,6 @@ collections:
         name: "running_line"
         file: "content/running_line.yml"
         fields:
-          - {label: "Text", name: "text", widget: "Text"}
-          - {label: "Link", name: "link", widget: "String"}
-          - {label: "Active", name: "active", widget: "Boolean"}
+          - {label: "Text", name: "text", widget: "text"}
+          - {label: "Link", name: "link", widget: "string"}
+          - {label: "Active", name: "active", widget: "boolean"}
