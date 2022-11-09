@@ -65,7 +65,7 @@ const Header = ({ categories, posts }) => {
     }
 
     setSearchValue(searchValue => {
-      setSearchResults([...posts.filter(i => i.data.title.toLowerCase().includes(searchValue.toLowerCase()))])
+      setSearchResults([...posts.filter(i => i.data.title?.toLowerCase().includes(searchValue?.toLowerCase()))])
       return searchValue
     })
     // setSearchActive(false)
