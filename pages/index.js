@@ -8,7 +8,6 @@ import Latest from "../components/Homepage/Latest";
 import ArticlesByCategory from "../components/Homepage/ArticlesByCategory";
 
 export default function Home({ posts, categories }) {
-  console.log("categories", categories)
 
   return (
     <>

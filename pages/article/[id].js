@@ -57,7 +57,6 @@ const Article = ({ posts, post, category }) => {
   const onScroll = (initialOffsetTop) => {
     const categoryHeader = document.getElementById("article-header"),
       offsetTop = categoryHeader?.offsetTop;
-    console.log(initialOffsetTop, offsetTop)
 
     if (initialOffsetTop !== offsetTop) {
       categoryHeader.classList.add("sticky")
@@ -79,10 +78,6 @@ const Article = ({ posts, post, category }) => {
   // TODO: !! COUNT BY MATCHING TAGS - SORT BY MATCHING TAGS AND SHOW RELATED TAGS
   // TODO: !! ADD TRENDING NOW CHECKBOX TO CRM AND MAP THEM ON HOMEPAGE
 
-  console.log("posts",posts)
-  console.log("post", post)
-  console.log("category", category)
-  console.log(content)
   return (
     <>
       <Head>

@@ -80,7 +80,6 @@ const Header = ({ categories, posts }) => {
     document.getElementById("subscribe")?.scrollIntoView({behavior: "smooth"})
   }
 
-  console.log(width)
 
   const innerProps = {
     sideNavigation,

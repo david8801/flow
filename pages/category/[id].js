@@ -11,7 +11,6 @@ import moment from "moment";
 import Pagination from "../../components/Pagination";
 
 const Category = ({ posts, category, tags }) => {
-  console.log(category)
   const { name, color } = category.data;
   const sideNavigation = useSelector(getSideNavigationSelector)
   const runningTextShown = useSelector(getRunningTextShownSelector)
@@ -48,7 +47,6 @@ const Category = ({ posts, category, tags }) => {
   const onScroll = (initialOffsetTop) => {
     const categoryHeader = document.getElementById("category-header"),
       offsetTop = categoryHeader?.offsetTop;
-    console.log(initialOffsetTop, offsetTop)
 
     if (initialOffsetTop !== offsetTop) {
       categoryHeader.classList.add("sticky")
@@ -65,9 +63,6 @@ const Category = ({ posts, category, tags }) => {
     setActiveTags(activeTags.includes(name) ? activeTags.filter(i => i !== name) : [...activeTags, name])
   }
 
-  console.log("posts", posts)
-  console.log("tags", tags)
-  console.log(activeTags)
   const filteredPosts = (
     posts
       .filter(i => activeTags.length ? activeTags.every(j => i.data.tags?.map(i => i.name).includes(j)) : true)
@@ -138,7 +133,6 @@ export async function getStaticPaths() {
   const categories = await getCategories()
 
   // TODO: probably will need to be changed when CRM will be backended
-  console.log(categories.map(i => ({ params: { id: i.slug } })))
   return {
     paths: categories.map(i => ({ params: { id: i.slug } })),
     fallback: false
@@ -161,7 +155,6 @@ export async function getStaticProps({ params }) {
     }))
 
   let tags = [];
-  console.log(posts)
   posts.map(i => i.data.tags)
     .flat(2)
     .filter(i => i)

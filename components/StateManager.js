@@ -12,7 +12,6 @@ const StateManager = ({ children, runningLineSettings = {} }) => {
   const sideNavigation = useSelector(getSideNavigationSelector)
   const [subscribePopup, setSubscribePopup] = useState(false);
 
-  console.log("runningLineSettings",runningLineSettings)
   useEffect(() => {
     const storageSignToNewsShown = localStorage.getItem(keys.signToNews)
     const storageTheme = localStorage.getItem(keys.theme)
@@ -26,7 +25,6 @@ const StateManager = ({ children, runningLineSettings = {} }) => {
     dispatch(setTheme(storageTheme || defaultTheme))
     dispatch(setSideNavigation(storageSideNavigation ? storageSideNavigation === "true" : true))
 
-    console.log('storageSignToNewsShown', storageSignToNewsShown)
     if (!storageSignToNewsShown) {
       setTimeout(() => setSubscribePopup(true), 10000)
     }

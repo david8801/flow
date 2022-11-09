@@ -47,7 +47,6 @@ const Search = ({ posts }) => {
   const onScroll = (initialOffsetTop) => {
     const categoryHeader = document.getElementById("category-header"),
       offsetTop = categoryHeader?.offsetTop;
-    console.log(initialOffsetTop, offsetTop)
 
     if (initialOffsetTop !== offsetTop) {
       categoryHeader.classList.add("sticky")

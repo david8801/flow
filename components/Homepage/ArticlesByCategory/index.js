@@ -10,7 +10,6 @@ const ArticlesByCategory = ({ posts, categories }) => {
 
   const orderByCategory = useMemo(() => {
     return categories.reduce((acc, val) => {
-      console.log("val", val)
       acc[val.slug] = val.data.order
 
       if (!acc.trending) {
@@ -44,7 +43,6 @@ const ArticlesByCategory = ({ posts, categories }) => {
     setArticlesDivided(final)
   }, [posts])
 
-  console.log("articlesDivided",articlesDivided)
   return (
     <div className={styles.articlesByCategoryWrapper}>
       {Object.entries(articlesDivided)

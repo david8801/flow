@@ -5,7 +5,6 @@ import styles from "./styles.module.css"
 
 const CategoryList = ({ categories, onClick }) => {
   const router = useRouter();
-  console.log(router)
   return <>
     <Link href={"/"}>
           <span

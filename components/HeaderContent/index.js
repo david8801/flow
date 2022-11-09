@@ -28,7 +28,6 @@ const HeaderContent = ({
   const categorySlugs = useMemo(() => categories.map(i => i.slug), [categories])
   const runningTextShown = useSelector(getRunningTextShownSelector)
 
-  console.log(router)
   useEffect(() => {
     const categorySlug = router.pathname === "/" ? 'home' : router.query?.id;
     const activeCategoryElem = document.getElementById(categorySlug);
@@ -80,7 +79,6 @@ const HeaderContent = ({
       stateManager = document.getElementById("state-manager"),
       offsetTop = header?.offsetTop;
 
-    console.log(offsetTop)
 
     if (initialOffsetTop !== offsetTop) {
       stateManager.classList.add("categories-sticky")

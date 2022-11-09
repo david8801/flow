@@ -10,7 +10,6 @@ import getRunningLineSettings from "./api/getRunningLineSettings";
 
 
 function MyApp({ Component, pageProps, props }) {
-  console.log("pageProps", pageProps)
   return (
     <Provider store={store}>
       <StateManager runningLineSettings={props.runningLineSettings}>
