@@ -14,7 +14,7 @@ author: Maria Donchenko
 tags:
   - name: career development
 ---
-![https://miro.medium.com/max/1400/1\*bvMWFfXMkwVdc2jLeF51PA.png](https://miro.medium.com/max/1400/1*bvMWFfXMkwVdc2jLeF51PA.png)
+![pencils](https://miro.medium.com/max/1400/1*bvMWFfXMkwVdc2jLeF51PA.png)
 
 How to be a good leader?
 
@@ -34,7 +34,7 @@ At work, people are often faced with the question: “Where are we going? Why ar
 
 ## **Culture Formation**
 
-![https://miro.medium.com/max/1400/1\*eY-SxtRmvr_qHTIYHp72Vw.png](https://miro.medium.com/max/1400/1*eY-SxtRmvr_qHTIYHp72Vw.png)
+![graphic](https://miro.medium.com/max/1400/1*eY-SxtRmvr_qHTIYHp72Vw.png)
 
 What reasons would lead to quit your job?
 
@@ -65,3 +65,7 @@ And most importantly, understand whether you have these inclinations. Being a le
 If you feel the strength and energy to develop not only yourself but also the team, then move forward to success. ;)
 
 P.S. If you have your own recipes for successful leadership [drop me a message](<>), I will be happy to talk and discuss your experience.
+
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Proud of my creative team! You make the world more beautiful<a href="https://twitter.com/verikdmt?ref_src=twsrc%5Etfw">@verikdmt</a> <a href="https://twitter.com/serhii_dmytruk?ref_src=twsrc%5Etfw">@serhii_dmytruk</a> and others who do not have Twitter account 🙂 <a href="https://t.co/PvCYBPIgri">https://t.co/PvCYBPIgri</a></p>&mdash; info.grib (@InfoGrib) <a href="https://twitter.com/InfoGrib/status/1588635142536720385?ref_src=twsrc%5Etfw">November 4, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
