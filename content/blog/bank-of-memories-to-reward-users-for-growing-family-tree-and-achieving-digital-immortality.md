@@ -3,7 +3,7 @@ image: img/labhbyvjb3tvetna6t1w.webp
 title: Bank of Memories to Reward Users for Growing Family Tree and Achieving
   Digital Immortality
 subtitle: Family staking
-category: blockchain
+category: it
 date: 2022-12-07T08:48:55.374Z
 sponsored: false
 trending: true
