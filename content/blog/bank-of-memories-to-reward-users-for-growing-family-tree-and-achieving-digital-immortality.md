@@ -6,7 +6,7 @@ subtitle: Family staking
 category: blockchain
 date: 2022-12-07T08:48:55.374Z
 sponsored: false
-trending: false
+trending: true
 author: Maria Donchenko
 tags:
   - name: web3
