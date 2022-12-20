@@ -15,8 +15,9 @@ author: "The Cymes "
 tags:
   - name: web3
 ---
-## \
-What is Bank Of Memories?
+
+
+## What is Bank Of Memories?
 
 [Bank of Memories](https://bankofmemories.org/) is a web3 platform that leverages crypto-primitives and new forms of engagement with web3 to create a safe space for family units to interact and build out their family tree. Users can earn $GBM tokens for growing their family tree, which can then be used to access all the services the platform provides.
 
