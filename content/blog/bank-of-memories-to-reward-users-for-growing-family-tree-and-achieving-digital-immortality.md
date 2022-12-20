@@ -1,5 +1,5 @@
 ---
-image: img/labhbyvjb3tvetna6t1w.webp
+image: img/bank-of-memories.png
 title: Bank of Memories to Reward Users for Growing Family Tree and Achieving
   Digital Immortality
 subtitle: Bank of Memories is a web3 platform that leverages crypto-primitives
@@ -11,12 +11,11 @@ category: blockchain
 date: 2022-12-07T08:48:55.374Z
 sponsored: false
 trending: true
-author: Maria Donchenko
+author: "The Cymes "
 tags:
   - name: web3
 ---
-## <!--StartFragment-->\
-\
+## \
 What is Bank Of Memories?
 
 [Bank of Memories](https://bankofmemories.org/) is a web3 platform that leverages crypto-primitives and new forms of engagement with web3 to create a safe space for family units to interact and build out their family tree. Users can earn $GBM tokens for growing their family tree, which can then be used to access all the services the platform provides.
@@ -37,7 +36,7 @@ Users can also participate in Family Fund Staking. With this, users can stake $G
 
 > 55% of the entire $GBM supply will be available to early users.
 
-![Bank of memories](img/fcyzd57xgagvv1g.jfif)
+![Bank of memories](img/fcyzd57xgagvv1g.jfif "bankofmemories.org")
 
 ## Creating Heritage on the Blockchain
 
@@ -58,5 +57,3 @@ The importance of a safe space for people to interact in this new world of exces
 ## Digital Immortality Within Reach with Bank of Memories
 
 The blockchain will usher in many changes in finance, data, privacy, ownership, and more. Bank of Memories takes a long view. Decentralized networks have the ability to create true inviolable digital immortality, with incorruptible storage and inviolable truth handed down through generations with the blockchain. Bank of Memories file storage and social services will create the ideal platform for generations to come together and interact in the brave new world of web3.
-
-<!--EndFragment-->
