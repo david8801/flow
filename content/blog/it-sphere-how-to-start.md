@@ -21,8 +21,6 @@ In my opinion, the war has shown us the fragility of our postponement “for tom
 
 Secondly, IT is high salaries relative to other areas. Many courses are very conspicuous with this, showing salaries for vacancies requiring experienced developers (5+ years of experience). Therefore, I will share with you the data for positions with less than a year of experience in Ukraine:
 
-
-
 > \- $300–400 — Intern/Trainee Software Engineer, QA
 >
 > \- $600–700 — Junior Software Engineer, QA
@@ -45,7 +43,7 @@ I was graduating from the filmmaking faculty, so the end of my studies fell unde
 
 Unfortunately, at the university, no one explains the current working conditions. No one even says you can’t feed yourself with metaphors or years of adoring the hope of getting money for your idea. Nobody explains that you need money for a graduation movie, which is difficult to earn because you spend twelve hours a day, seven days a week, attending endless classes and only have time to work at night. As you understand, this is, first and foremost, the destruction of your physical and moral health.
 
-After the graduation exam, I was exhausted and disappointed. My best friend, a programmer, encouraged me to study design, and I am very grateful to him for showing me a different world, with varying conditions of working and cooperation. I will say that my craving for drawing and creativity helped me in rejecting web design for myself. I started learning web design for 3–4 hours a day and tried to figure out what kind of miracle it was. I did not even think about where the button in the application comes from and who does the design.
+After the graduation exam, I was exhausted and disappointed. My best friend, a programmer, encouraged me to study design, and I am very grateful to him for showing me a different world, with varying conditions of working and cooperation. I will say that my craving for drawing and creativity helped me in rejecting web design myself. I started learning web design for 3–4 hours a day and tried to figure out what kind of miracle it was. I did not even think about where the button in the application comes from and who does the design.
 
 # Where do I start?
 
@@ -55,7 +53,7 @@ Let’s start with the fact that no one stops you from **the attempt**. I used 
 
 But before, you might understand what EXACTLY you need to learn.
 
-![](https://miro.medium.com/max/1400/1*3hJWD3zvCdMJGAJj8xc00w.png)
+![It’s worth a shot](https://miro.medium.com/max/1400/1*3hJWD3zvCdMJGAJj8xc00w.png "It’s worth a shot")
 
 It’s worth a shot
 
@@ -71,7 +69,7 @@ My education as a film director taught me to look into human psychology, which h
 
 > Write all your experiences, hobbies, and interests in one document — analyze your skills. This is a significant point.
 
-![](https://miro.medium.com/max/1400/1*39q9fwEItj6vEUyNQlFKVQ.png)
+![Use your talents](https://miro.medium.com/max/1400/1*39q9fwEItj6vEUyNQlFKVQ.png "Use your talents")
 
 Write all your experiences, hobbies, and interests in one document — analyze your skills. This is a significant point.
 
@@ -81,7 +79,7 @@ It is the best skill for you, I promise! The IT sphere is built on finding infor
 
 > Nowadays, searching for information is much more critical than knowledge, so pay attention to this. Thanks to it, you will quickly find both materials for training and the job of your dreams!
 
-![](https://miro.medium.com/max/1400/1*wl9L5w1TZYZFKFZg4h9t0g.png)
+![Googling](https://miro.medium.com/max/1400/1*wl9L5w1TZYZFKFZg4h9t0g.png "Googling")
 
 You must know WHAT, HOW, and WHERE you are searching.
 
@@ -91,9 +89,11 @@ Do not hesitate to write to IT companies and ask them to study, so you will have
 
 But an important detail: come to them with the base knowledge, show that you are interested in the topic, and the chosen direction, and are ready to learn. Do not forget about your enthusiasm! It will be your main pusher at the beginning.
 
-## Even in many unspoken conditions of hiring a junior specialist or intern, there is a clause called “shining eyes.”
 
-![](https://miro.medium.com/max/1400/1*MaRxZ0nKtsG92zVxBZsiFw.png)
+
+> ## Even in many unspoken conditions of hiring a junior specialist or intern, there is a clause called “shining eyes.”
+
+![Networking](https://miro.medium.com/max/1400/1*MaRxZ0nKtsG92zVxBZsiFw.png "Networking")
 
 Even in many unspoken conditions of hiring a junior specialist or intern, there is a clause called “shining eyes.”
 
@@ -107,7 +107,7 @@ I also recommend the service [ADP LIST](https://adplist.org/). The service allo
 
 I want to focus on the mentoring system as more of a system of questions and advice, not training or courses. Very often, human experience is more important than general knowledge. I am also open to mentoring, so [email me](mailto:upme12345@gmail.com), and I will be happy to help you. Again, it’s all free!
 
-![](https://miro.medium.com/max/1400/1*5iab9xOgHXlpEHdPoHGT0A.png)
+![Mentorship](https://miro.medium.com/max/1400/1*5iab9xOgHXlpEHdPoHGT0A.png "Mentorship")
 
 Very often, human experience is more important than general knowledge.
 
@@ -117,7 +117,7 @@ After you have analyzed your skills, realized your desires, and found or are loo
 
 Don’t forget about English. There are a million ways to learn it now. English not only opens up the opportunity to work abroad (which is an excellent addition to the skill) but also to absorb information much faster because many quality courses and scholarly sources are written in this language.
 
-I watched a lot of content in English for a year, and I can already communicate fluently with native speakers. I believe that you can learn a lot on your own so that I will leave a couple of useful sites:
+I watched a lot of content in English for a year, and I can already communicate fluently with native speakers. I believe that you can learn a lot on your own so I will leave a couple of useful sites:
 
 ## [dou.ua](https://dou.ua/)
 
@@ -131,11 +131,8 @@ The site for essential learning of programming languages
 
 You can buy an annual subscription to their video library courses from design to marketing.
 
-![](https://miro.medium.com/max/1400/1*SbUDqIUBXcufzfia663X_Q.png)
+![Start discovering](https://miro.medium.com/max/1400/1*SbUDqIUBXcufzfia663X_Q.png "Start discovering")
 
 Start learning with inspiration!
 
 I hope I helped you and you are one step closer to your goal! Of course, we all have our own experiences, and there is no one way to achieve the goal. The main thing is to go in its direction and not be afraid to ask even what seems strange or stupid. Everyone started with this.
-
-\
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Proud of my creative team! You make the world more beautiful<a href="https://twitter.com/verikdmt?ref_src=twsrc%5Etfw">@verikdmt</a> <a href="https://twitter.com/serhii_dmytruk?ref_src=twsrc%5Etfw">@serhii_dmytruk</a> and others who do not have Twitter account 🙂 <a href="https://t.co/PvCYBPIgri">https://t.co/PvCYBPIgri</a></p>&mdash; info.grib (@InfoGrib) <a href="https://twitter.com/InfoGrib/status/1588635142536720385?ref_src=twsrc%5Etfw">November 4, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
