@@ -9,7 +9,7 @@ subtitle: It isn’t easy to do a project without a manager if more than 2 peopl
 category: design
 date: 2022-11-21T16:47:21.528Z
 sponsored: false
-trending: true
+trending: false
 author: Maria Donchenko
 tags:
   - name: career development
