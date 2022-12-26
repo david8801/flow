@@ -5,6 +5,7 @@ import SignToNews from "./SignToNews";
 
 const RenderContent = ({ children, categories, posts }) => {
 
+  console.log(children.type.name)
   return (
     <>
       <Header categories={categories} posts={posts}/>
