@@ -2,6 +2,18 @@
   margin-top: var(--article-distance-top);
   padding: 38px 82px;
   background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 28px;
+}
+
+.articleTopWrapper img {
+  width: 100%;
+}
+
+.articleHeaderInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .articleMeta {
@@ -11,7 +23,7 @@
 
 .articleMain {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content;
   margin-top: 24px;
   grid-gap: 32px;
 }
@@ -269,6 +281,15 @@
 
   :global(.state-manager.menu-left) .media {
     left: 24px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .articleTopWrapper img {
+    display: none;
+  }
+  .articleTopWrapper {
+    grid-template-columns: 1fr;
   }
 }
 

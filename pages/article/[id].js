@@ -69,7 +69,7 @@ const Article = ({ posts, post, category }) => {
     setContent(
       remark()
         .use(recommended)
-        .use(remarkHtml, {sanitize: false})
+        .use(remarkHtml, { sanitize: false })
         .processSync(post.content).toString()
         .replaceAll?.('src="img', 'src="' + process.env.NEXT_PUBLIC_WEBSITE_URL + "/img")
     )
@@ -86,17 +86,20 @@ const Article = ({ posts, post, category }) => {
       </Head>
       <div>
         <div id={"article-header"} className={styles.articleTopWrapper}>
-          <div className={styles.articleMeta}>
-            <span style={{ color: color }} className={styles.category}>.{name}</span>
-            <span className={styles.date}>{moment(post.data.date).format('D MMMM HH:mm')}</span>
-          </div>
-          <div className={styles.articleMain}>
+          <img src={process.env.NEXT_PUBLIC_WEBSITE_URL + "/" + post.data.image} alt=""/>
+          <div className="article-header-info">
+            <div className={styles.articleMeta}>
+              <span style={{ color: color }} className={styles.category}>.{name}</span>
+              <span className={styles.date}>{moment(post.data.date).format('D MMMM HH:mm')}</span>
+            </div>
+            <div className={styles.articleMain}>
             <span className={styles.title}>
               <span className={styles.brace}>{"< "}</span>
               {post.data.title}
               <span className={styles.brace}>{"/>"}</span>
             </span>
-            <span className={styles.subtitle}>{post.data.subtitle}</span>
+              <span className={styles.subtitle}>{post.data.subtitle}</span>
+            </div>
           </div>
         </div>
         <div className={styles.articleWrapper}>

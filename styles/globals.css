@@ -162,6 +162,27 @@ span, button, h1, h2, h3, h4, h5, li, p, input {
   padding-left: 168px;
 }
 
+.page-content .seo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 84px;
+}
+
+.page-content .seo-text-wrapper h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 35px;
+}
+
+.page-content .seo-text-wrapper p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #BABABA;
+  margin-top: 24px;
+}
+
 .menu-left.running-text-shown .page-content {
   padding-top: var(--distance-top);
 }
@@ -242,6 +263,10 @@ span, button, h1, h2, h3, h4, h5, li, p, input {
 }
 
 @media (max-width: 800px) {
+  .page-content .seo-text-wrapper {
+    padding: 24px 16px;
+  }
+
   .state-manager .page-content {
     padding-left: 0;
   }

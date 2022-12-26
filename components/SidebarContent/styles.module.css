@@ -13,6 +13,7 @@
 
 .sidebar > svg {
   cursor: pointer;
+  width: 100%;
 }
 
 .search {
