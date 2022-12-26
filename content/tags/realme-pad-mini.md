@@ -1,0 +1,3 @@
+---
+name: realme pad mini
+---
