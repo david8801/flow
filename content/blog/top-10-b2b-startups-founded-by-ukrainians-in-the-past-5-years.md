@@ -12,7 +12,7 @@ subtitle: Ukrainians have been making a big impact in the tech industry in
 category: startups
 date: 2022-12-26T13:35:36.730Z
 sponsored: false
-trending: false
+trending: true
 author: Lily Mitina
 tags:
   - name: B2B
