@@ -9,6 +9,7 @@ import {useSelector} from "react-redux";
 import {getRunningTextShownSelector, getSideNavigationSelector} from "../../store/main/selectors";
 import moment from "moment";
 import Pagination from "../../components/Pagination";
+import HeadSEO from "../../components/HeadSEO";
 
 const Category = ({ posts, category, tags }) => {
   const { name, color } = category.data;
@@ -70,10 +71,11 @@ const Category = ({ posts, category, tags }) => {
   );
   return (
     <>
-      <Head>
-        <title>{category.data.name} - The Cymes</title>
-        <meta name="description" content={`${category.data.name} - The Cymes blog`}/>
-      </Head>
+      <HeadSEO
+        title={`${name} Category - The Cymes`}
+        description={`${name} Category - The Cymes blog`}
+        image={process.env.NEXT_PUBLIC_WEBSITE_URL + "/meta.png"}
+      />
       <div>
         <div id={"category-header"} className={styles.categoryTopWrapper}>
           <div className={styles.categoryTop}>

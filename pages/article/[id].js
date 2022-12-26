@@ -11,6 +11,7 @@ import remarkHtml from 'remark-html';
 import moment from "moment";
 import {Discord, Facebook, Instagram, Telegram, Twitter} from "../../icons/header";
 import ArticleCard from "../../components/ArticleCard";
+import HeadSEO from "../../components/HeadSEO";
 
 const Article = ({ posts, post, category }) => {
   const { name, color } = category.data;
@@ -80,10 +81,11 @@ const Article = ({ posts, post, category }) => {
 
   return (
     <>
-      <Head>
-        <title>{post.data.title} - The Cymes</title>
-        <meta name="description" content={`${post.data.title} - The Cymes blog`}/>
-      </Head>
+      <HeadSEO
+        title={`${post.data.title} - The Cymes`}
+        description={`${post.data.subtitle} - The Cymes blog`}
+        image={process.env.NEXT_PUBLIC_WEBSITE_URL + "/" + post.data.image}
+      />
       <div>
         <div id={"article-header"} className={styles.articleTopWrapper}>
           <img src={process.env.NEXT_PUBLIC_WEBSITE_URL + "/" + post.data.image} alt=""/>

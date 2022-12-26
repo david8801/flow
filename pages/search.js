@@ -9,6 +9,7 @@ import SignToNews from "../components/SignToNews";
 import {useSelector} from "react-redux";
 import {getRunningTextShownSelector, getSideNavigationSelector} from "../store/main/selectors";
 import Pagination from "../components/Pagination";
+import HeadSEO from "../components/HeadSEO";
 
 const Search = ({ posts }) => {
   const sideNavigation = useSelector(getSideNavigationSelector)
@@ -62,10 +63,11 @@ const Search = ({ posts }) => {
   const filteredPosts = posts.filter(i => i.data.title?.toLowerCase().includes(searchValue?.toLowerCase()));
   return (
     <>
-      <Head>
-        <title>{searchValue} Search - The Cymes</title>
-        <meta name="description" content={`${searchValue} Search - The Cymes blog`}/>
-      </Head>
+      <HeadSEO
+        title={`${searchValue} Search - The Cymes`}
+        description={`${searchValue} Search - The Cymes blog`}
+        image={process.env.NEXT_PUBLIC_WEBSITE_URL + "/meta.png"}
+      />
       <div>
         <div id={"category-header"} className={styles.categoryTopWrapper}>
           <div className={styles.categoryTop}>
