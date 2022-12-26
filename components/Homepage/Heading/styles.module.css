@@ -16,7 +16,6 @@
 }
 
 .mainArticleContent {
-  margin: 0 32px;
   position: absolute;
   bottom: 0;
   transform: translateY(162px);

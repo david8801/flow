@@ -6,16 +6,17 @@ import React from "react";
 import Heading from "../components/Homepage/Heading";
 import Latest from "../components/Homepage/Latest";
 import ArticlesByCategory from "../components/Homepage/ArticlesByCategory";
+import HeadSEO from "../components/HeadSEO";
 
 export default function Home({ posts, categories }) {
 
   return (
     <>
-      <Head>
-        <title>Flow</title>
-        <meta name="description" content="Flow blog"/>
-        <link rel="icon" href="/public/favicon.ico"/>
-      </Head>
+      <HeadSEO
+        title={"Zoom in tech power | The Cymes"}
+        description={"The Cymes is a new media platform that covers the latest news and developments in the world of IT and technology. Founded by Ukrainian entrepreneurs, developers, and designers, The Cymes offers a unique perspective on the world of tech. With a focus on delivering high-quality content and staying up-to-date on the latest trends and innovations, The Cymes is a valuable resource for anyone interested in staying informed about the constantly evolving world of IT and technology. Whether you're a developer, designer, or simply a tech enthusiast, The Cymes is sure to have something for you."}
+        image={"/meta.png"}
+      />
       <div className={styles.homepage}>
         <Heading posts={posts}/>
         <div className={styles.verticalSplit}>

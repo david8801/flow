@@ -71,9 +71,8 @@ const Category = ({ posts, category, tags }) => {
   return (
     <>
       <Head>
-        <title>{category.data.name} - Flow</title>
-        <meta name="description" content={`${category.data.name} - Flow blog`}/>
-        <link rel="icon" href="/public/favicon.ico"/>
+        <title>{category.data.name} - The Cymes</title>
+        <meta name="description" content={`${category.data.name} - The Cymes blog`}/>
       </Head>
       <div>
         <div id={"category-header"} className={styles.categoryTopWrapper}>

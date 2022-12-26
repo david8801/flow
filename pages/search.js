@@ -63,9 +63,8 @@ const Search = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>{searchValue} Search - Flow</title>
-        <meta name="description" content={`${searchValue} Search - Flow blog`}/>
-        <link rel="icon" href="/public/favicon.ico"/>
+        <title>{searchValue} Search - The Cymes</title>
+        <meta name="description" content={`${searchValue} Search - The Cymes blog`}/>
       </Head>
       <div>
         <div id={"category-header"} className={styles.categoryTopWrapper}>

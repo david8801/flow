@@ -6,6 +6,7 @@ import Link from "next/link";
 import CategoryList from "../CategoryList";
 
 const Footer = ({ categories }) => {
+  const currentYear = new Date().getFullYear()
 
   return (
     <div className={styles.footerWrapper}>
@@ -33,7 +34,7 @@ const Footer = ({ categories }) => {
         <CategoryList categories={categories}/>
       </div>
       <span className={styles.copyright}>
-        © The Cymes 2022
+        © The Cymes {currentYear}
       </span>
     </div>
   )

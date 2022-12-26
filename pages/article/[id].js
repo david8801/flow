@@ -81,9 +81,8 @@ const Article = ({ posts, post, category }) => {
   return (
     <>
       <Head>
-        <title>{post.data.title} - Flow</title>
-        <meta name="description" content={`${post.data.title} - Flow blog`}/>
-        <link rel="icon" href="/public/favicon.ico"/>
+        <title>{post.data.title} - The Cymes</title>
+        <meta name="description" content={`${post.data.title} - The Cymes blog`}/>
       </Head>
       <div>
         <div id={"article-header"} className={styles.articleTopWrapper}>
