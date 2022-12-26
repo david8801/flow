@@ -2,9 +2,11 @@ import React from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import SignToNews from "./SignToNews";
+import {useRouter} from "next/router";
 
 const RenderContent = ({ children, categories, posts }) => {
-
+  const router = useRouter()
+  console.log(router.pathname)
   console.log(children.type.name)
   return (
     <>
@@ -13,7 +15,7 @@ const RenderContent = ({ children, categories, posts }) => {
         {children}
 
         <SignToNews/>
-        {children.type.name === "Home" && (
+        {router.pathname === "/" && (
           <div className="seo-text-wrapper">
             <h1>Zoom in Tech power | The Cymes </h1>
             <p>
