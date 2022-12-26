@@ -12,7 +12,10 @@ trending: true
 author: Lily Mitina
 tags:
   - name: trends
-  - name: web3
+  - name: Elon Musk
+  - name: SpaceX
+  - name: Twitter
+  - name: Tesla
 ---
 <!--StartFragment-->
 
