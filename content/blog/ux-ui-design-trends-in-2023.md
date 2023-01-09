@@ -11,6 +11,7 @@ trending: true
 author: Maria Donchenko
 tags:
   - name: trends
+  - name: ux/ui design
 ---
 # How to design in 2023? Check out UX/UI Trends for the new year!
 
