@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SignToNews from "./SignToNews";
 import {useRouter} from "next/router";
+import Script from "next/script";
 
 const RenderContent = ({ children, categories, posts }) => {
   const router = useRouter()
@@ -10,6 +11,10 @@ const RenderContent = ({ children, categories, posts }) => {
   console.log(children.type.name)
   return (
     <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=G-SB0XJLQX6J`}
+        strategy="afterInteractive"
+      />
       <Header categories={categories} posts={posts}/>
       <div className={"page-content theme-bg"}>
         {children}
