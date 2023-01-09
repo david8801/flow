@@ -10,7 +10,7 @@ subtitle: Bank of Memories is a web3 platform that leverages crypto-primitives
 category: blockchain
 date: 2022-12-07T08:48:55.374Z
 sponsored: false
-trending: true
+trending: false
 author: "The Cymes "
 tags:
   - name: web3
