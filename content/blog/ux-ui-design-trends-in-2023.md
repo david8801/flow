@@ -1,6 +1,6 @@
 ---
 image: img/ui-design-trends-2023.png
-title: UX/UI Design trends in 2023
+title: How to design in 2023? UX/UI Design Trends!
 subtitle: "As we move further into the future, UX/UI design continues to evolve
   and adapt to new technologies and changing user expectations. Here are some of
   the top trends we can expect to see in 2023:"
