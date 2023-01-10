@@ -1,6 +1,6 @@
 ---
 image: img/realme-pad-mini.jpg
-title: realme Ukraine announced the start of sales for the ultra-thin and
+title: Realme Ukraine announced the start of sales for the ultra-thin and
   ultra-durable Pad mini
 subtitle: " Realme, the world's fastest-growing smartphone brand, officially
   unveiled the new generation of its Android tablet line - the Realme Pad mini.
