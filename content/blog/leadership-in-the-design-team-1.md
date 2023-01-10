@@ -1,6 +1,6 @@
 ---
-image: img/img_0662.jpg
-title: Leadership in the Design Team
+image: img/leadership-in-design-team.png
+title: How to be a good leader? Leadership in the Design Team
 subtitle: It isn’t easy to do a project without a manager if more than 2 people
   are on the team. Imagine a company with any common development goals, whether
   an outsourced, long-term product or startup. Someone should share these goals
@@ -9,25 +9,17 @@ subtitle: It isn’t easy to do a project without a manager if more than 2 peopl
 category: design
 date: 2022-11-21T16:47:21.528Z
 sponsored: false
-trending: false
+trending: true
 author: Maria Donchenko
 tags:
   - name: career development
   - name: trends
 ---
-![https://miro.medium.com/max/1400/1\*bvMWFfXMkwVdc2jLeF51PA.png](https://miro.medium.com/max/1400/1*bvMWFfXMkwVdc2jLeF51PA.png)
 
-![Why a Team Leader Exists](img/1-1e54cjiodc12pfj9xh4ysq.webp)
-
-
-
-
-
-How to be a good leader?
 
 # **Why a Team Leader Exists?**
 
-It isn’t easy to do a project without a manager if more than 2 people are on the team. Imagine a company with any common development goals, whether an outsourced, long-term product, or startup. Someone should share these goals with the team or even build the new ones. A leader is a person who can help a team with their personal growth.
+It isn’t easy to do a project without a manager if more than 2 people are on the team. Imagine a company with any common development goals, whether an outsourced, long-term product or startup. Someone should share these goals with the team or even build new ones. A leader is a person who can help a team with personal growth.
 
 # **What Should a Leader Do?**
 
@@ -37,15 +29,13 @@ Not all people are willing to take responsibility for others: writing weekly-mon
 
 ## **Strategy**
 
-At work, people are often faced with the question: “Where are we going? Why are we doing this?” Goals are a time-consuming thing, it is challenging to notice how something changes by a couple percents every day, so the leader’s task is to remind his team of goals and track the progress of each team member as a single organism. The leader must know the answer: “What do we want to achieve?”. A leader is a person who carries a load of tasks with people, not sitting in a chair and just showing them where to go. The very etymology of the word indicates the mission of the leader. A good leader must notice changes in the team and know how to tactfully either ask, keep quiet, or help.
+At work, people are often faced with the question: “Where are we going? Why are we doing this?” Goals are a time-consuming thing, it is challenging to notice how something changes by a couple of percents every day, so the leader’s task is to remind his team of goals and track the progress of each team member as a single organism. The leader must know the answer: “What do we want to achieve?”. A leader is a person who carries a load of tasks with people, not sitting in a chair and just showing them where to go. The very etymology of the word indicates the mission of the leader. A good leader must notice changes in the team and know how to tactfully either ask, keep quiet, or help.
 
 ## **Culture Formation**
 
-![https://miro.medium.com/max/1400/1\*eY-SxtRmvr_qHTIYHp72Vw.png](https://miro.medium.com/max/1400/1*eY-SxtRmvr_qHTIYHp72Vw.png)
+![https://miro.medium.com/max/1400/1\*eY-SxtRmvr_qHTIYHp72Vw.png](https://miro.medium.com/max/1400/1*eY-SxtRmvr_qHTIYHp72Vw.png "What reasons would lead to quitting your job?")
 
-What reasons would lead to quit your job?
-
-You can see the reasons for quitting a company above. Half or more are because of the culture in the company. The company’s culture can sometimes have harmful components: acceptance of sexism, chauvinism, ageism, the arrogance of management positions, or, for example, hyper-competition. The leaders’ tasks at all levels are to create a culture as tolerant and friendly as possible, so that it is comfortable for new people to join it and reveal their talents to the fullest. Culture can also form on its own, unnoticed, so it is vital to grab the negative situations by the tail and examine them under a microscope so that they do not repeat.
+You can see the reasons for quitting a company above. Half or more is because of the culture in the company. The company’s culture can sometimes have harmful components: acceptance of sexism, chauvinism, ageism, the arrogance of management positions, or, for example, hyper-competition. The leaders’ tasks at all levels are to create a culture as tolerant and friendly as possible so that it is comfortable for new people to join it and reveal their talents to the fullest. Culture can also form on its own, unnoticed, so it is vital to grab the negative situations by the tail and examine them under a microscope so that they do not repeat.
 
 You can find more about the reasons to quit [in this article](https://medium.com/@checkli/why-employees-quit-20-stats-employers-need-to-know-b921c253f767)
 
@@ -72,5 +62,3 @@ And most importantly, understand whether you have these inclinations. Being a le
 If you feel the strength and energy to develop not only yourself but also the team, then move forward to success. ;)
 
 > P.S. If you have your own recipes for successful leadership [drop me a message](<>), I will be happy to talk and discuss your experience
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Proud of my creative team! You make the world more beautiful<a href="https://twitter.com/verikdmt?ref_src=twsrc%5Etfw">@verikdmt</a> <a href="https://twitter.com/serhii_dmytruk?ref_src=twsrc%5Etfw">@serhii_dmytruk</a> and others who do not have Twitter account 🙂 <a href="https://t.co/PvCYBPIgri">https://t.co/PvCYBPIgri</a></p>&mdash; info.grib (@InfoGrib) <a href="https://twitter.com/InfoGrib/status/1588635142536720385?ref_src=twsrc%5Etfw">November 4, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
