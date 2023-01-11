@@ -1,5 +1,5 @@
 ---
-image: img/bank-of-memories.png
+image: img/bank-of-memories-to-reward-users-for-growing-family-tree-and-achieving-digital-immortality.png
 title: Bank of Memories to Reward Users for Growing Family Tree and Achieving
   Digital Immortality
 subtitle: Bank of Memories is a web3 platform that leverages crypto-primitives
