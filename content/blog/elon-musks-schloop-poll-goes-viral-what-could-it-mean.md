@@ -1,5 +1,5 @@
 ---
-image: img/63333385_605.jpg
+image: img/63333385_605-1.png
 title: "Elon Musk's 'Schloop' Poll Goes Viral: What Could It Mean?"
 subtitle: On December 20, 2022, Elon Musk made headlines when he used Twitter to
   conduct a poll about the potential for a new product. The Tesla and SpaceX CEO
